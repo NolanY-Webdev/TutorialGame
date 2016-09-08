@@ -1,0 +1,36 @@
+package data;
+
+import static org.lwjgl.opengl.GL11.GL_MODELVIEW;
+import static org.lwjgl.opengl.GL11.GL_PROJECTION;
+import static org.lwjgl.opengl.GL11.glLoadIdentity;
+import static org.lwjgl.opengl.GL11.glMatrixMode;
+import static org.lwjgl.opengl.GL11.glOrtho;
+
+import org.lwjgl.LWJGLException;
+import org.lwjgl.opengl.Display;
+import org.lwjgl.opengl.DisplayMode;
+import static helpers.Artist.*;
+
+
+public class Boot {
+
+	public Boot() {
+		
+		BeginSession();
+		
+		while(!Display.isCloseRequested()) {
+			
+			
+			Display.update();
+			Display.sync(60);
+			
+		}
+		
+		Display.destroy();
+	}
+	
+	
+	public static void main(String[] args) {
+		new Boot();
+	}
+}
