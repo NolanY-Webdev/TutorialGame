@@ -1,0 +1,33 @@
+package data;
+
+import static helpers.Artist.BeginSession;
+import static helpers.Artist.LoadTexture;
+
+import org.lwjgl.opengl.Display;
+import org.newdawn.slick.opengl.Texture;
+
+
+public class Boot {
+
+	public Boot() {
+		
+		BeginSession();
+		
+		Texture d = LoadTexture("res/dirt64.png", "PNG");
+		
+		while(!Display.isCloseRequested()) {
+			
+
+			Display.update();
+			Display.sync(60);
+			
+		}
+		
+		Display.destroy();
+	}
+	
+	
+	public static void main(String[] args) {
+		new Boot();
+	}
+}

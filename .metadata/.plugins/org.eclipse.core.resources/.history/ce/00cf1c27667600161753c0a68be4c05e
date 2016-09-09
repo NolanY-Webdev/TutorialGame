@@ -1,0 +1,11 @@
+package data;
+
+public class TileGrid {
+
+	public Tile[][] map;
+	
+	public TileGrid() {
+		map = new Tile[22][14];
+		for(int j = 0; )
+	}
+}

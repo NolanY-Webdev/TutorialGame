@@ -1,0 +1,45 @@
+package data;
+
+import static helpers.Artist.BeginSession;
+import static helpers.Artist.DrawQuadText;
+import static helpers.Artist.LoadTexture;
+
+import org.lwjgl.opengl.Display;
+import org.newdawn.slick.opengl.Texture;
+
+
+public class Boot {
+
+	public Boot() {
+		
+		BeginSession();
+		
+		Texture dirt = LoadTexture("res/dirt.png", "PNG");
+		Texture grass = LoadTexture("res/grass.png", "PNG");
+		Texture water = LoadTexture("res/water.png", "PNG");
+		
+		while(!Display.isCloseRequested()) {
+			for(int i = 0; i < 10; i++) {
+				if(i != 0) {
+					DrawQuadText(dirt, 0, 0, 64, 64);
+				}
+				DrawQuadText(dirt, 0, 0, 64, 64);
+				DrawQuadText(grass, 64, 0, 64, 64);
+				DrawQuadText(water, 128, 0, 64, 64);
+				
+			}
+			
+
+			Display.update();
+			Display.sync(60);
+			
+		}
+		
+		Display.destroy();
+	}
+	
+	
+	public static void main(String[] args) {
+		new Boot();
+	}
+}
