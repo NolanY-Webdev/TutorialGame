@@ -1,0 +1,49 @@
+package data;
+
+import static helpers.Artist.BeginSession;
+import static helpers.Artist.DrawQuadText;
+
+import org.lwjgl.opengl.Display;
+
+public class Boot {
+
+	public Boot() {
+
+		BeginSession();
+
+		int[][] map = {
+				{0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,1,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+		};
+		
+		TileGrid mATS = new TileGrid(map); //macAirTileSize -> mATS (1440 x 900)
+		
+		mATS.SetTile(5,4, "dirt");
+		
+		while (!Display.isCloseRequested()) {
+			
+			mATS.Draw();
+			
+			Display.update();
+			Display.sync(60);
+
+		}
+
+		Display.destroy();
+	}
+
+	public static void main(String[] args) {
+		new Boot();
+	}
+}
