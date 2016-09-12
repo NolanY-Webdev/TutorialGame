@@ -41,9 +41,9 @@ public class Boot {
 //		}
 ////		System.out.println();
 		
-	 
+	
 		TileGrid mATS = new TileGrid(map); //macAirTileSize -> mATS (1408 x 832 / 22x14 64 bit tiles)
-		mATS.SetTile(3, 4, TileType.Dirt);
+		
 		
 		
 		while (!Display.isCloseRequested()) {
