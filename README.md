@@ -39,6 +39,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   @ https://youtu.be/O1vQABTMMgo?t=21m20s
   First enemy to show on screen, committing progress.
 
-  @ https://youtu.be/g4OwOcKq148?t=14m12s
+  @ https://youtu.be/g4OwOcKq148?t=14m31s
   Clock helper implemented, understood to an extent but not completely.
   Enemy can now move slightly.
