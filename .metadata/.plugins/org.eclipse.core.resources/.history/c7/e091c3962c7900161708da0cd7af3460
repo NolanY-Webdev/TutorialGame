@@ -45,17 +45,16 @@ public class Boot {
 	 
 		TileGrid mATS = new TileGrid(map); //macAirTileSize -> mATS (1408 x 832 / 22x14 64 bit tiles)
 		mATS.SetTile(3, 4, mATS.GetTile(2, 4).getType());
-		Enemy e = new Enemy(QuickLoad("enemy1"), mATS.GetTile(10, 10), 64, 64, 10);
-		Wave wave1 = new Wave(20, e);
+		Enemy e = new Enemy(QuickLoad("enemy1"), mATS.GetTile(10, 10), 64, 64, 2);
+		Wave wave1 = new Wave(10, e);
 		
 		while (!Display.isCloseRequested()) {
 			Clock.update();
-
+			e.Update();
 			
 			
 			mATS.Draw();
-			wave1.Update();
-			
+			e.Draw();
 			Display.update();
 			Display.sync(60);
 

@@ -14,13 +14,12 @@ public class Enemy {
 	
 	public Enemy(Texture texture, Tile startTile, int width, int height, float speed) {
 		this.texture = texture;
-		this.startTile = startTile;
 		this.x = startTile.getX();
 		this.y = startTile.getY();
 		this.width = width;
 		this.height = height;
 		this.speed = speed;
-
+		
 	}
 	
 	public void Update() {

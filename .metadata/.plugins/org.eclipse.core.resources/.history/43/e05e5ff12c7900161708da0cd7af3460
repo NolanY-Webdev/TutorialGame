@@ -21,6 +21,7 @@ public class Enemy {
 		this.height = height;
 		this.speed = speed;
 
+		
 	}
 	
 	public void Update() {

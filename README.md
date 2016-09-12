@@ -42,3 +42,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   @ https://youtu.be/g4OwOcKq148?t=14m31s
   Clock helper implemented, understood to an extent but not completely.
   Enemy can now move slightly.
+
+  @ https://youtu.be/g4OwOcKq148?t=21m17s
+  Got enemy wave class creation working.
