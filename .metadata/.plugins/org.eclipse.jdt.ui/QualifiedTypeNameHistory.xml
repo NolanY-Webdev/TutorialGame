@@ -6,6 +6,10 @@
 <fullyQualifiedTypeName name="org.newdawn.slick.util.ResourceLoader"/>
 <fullyQualifiedTypeName name="org.newdawn.slick.opengl.TextureLoader"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="helpers.Artist"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="org.newdawn.slick.opengl.Texture"/>
+<fullyQualifiedTypeName name="helpers.Artist"/>
+<fullyQualifiedTypeName name="org.lwjgl.Sys"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="helpers.Clock"/>
 </qualifiedTypeNameHistroy>
