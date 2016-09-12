@@ -34,7 +34,11 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   Going to commit log and eat while coffee kicks in. Then I'll figure out where I'm at. Think I need to get out of the rabbit hole and just follow the video.
 
   @  https://youtu.be/O1vQABTMMgo?t=15m34s
-  got my map to match the one in the video as well, figured it was best for learning. At least I know I can easily change things around in my own way. Perhaps I will learn a better method in the future.
+  Got my map to match the one in the video as well, figured it was best for learning. At least I know I can easily change things around in my own way. Perhaps I will learn a better method in the future.
 
   @ https://youtu.be/O1vQABTMMgo?t=21m20s
-  first enemy to show on screen, committing progress.
+  First enemy to show on screen, committing progress.
+
+  @ https://youtu.be/g4OwOcKq148?t=14m12s
+  Clock helper implemented, understood to an extent but not completely.
+  Enemy can now move slightly.

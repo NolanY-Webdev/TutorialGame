@@ -9,8 +9,6 @@ public class Enemy {
 	private float speed, x, y;
 	private Texture texture;
 	private Tile startTile;
-	private boolean first = true;
-	
 	
 	public Enemy(Texture texture, Tile startTile, int width, int height, float speed) {
 		this.texture = texture;
@@ -23,11 +21,7 @@ public class Enemy {
 	}
 	
 	public void Update() {
-		if(first) {
-			first = false;
-		} else {
-			x += Delta() * speed;			
-		}
+		x += Delta() * speed;
 	}
 	
 	public void Draw() {
