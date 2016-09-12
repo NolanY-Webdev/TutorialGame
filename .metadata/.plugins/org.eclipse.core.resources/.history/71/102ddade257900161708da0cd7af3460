@@ -1,0 +1,27 @@
+package data;
+
+import static helpers.Artist.*;
+import org.newdawn.slick.opengl.Texture;
+
+
+
+public class Enemy {
+	private int width, height, health;
+	private float speed, x, y;
+	private Texture texture;
+	private Tile startTile;
+	
+	public Enemy(Texture texture, Tile startTile, int width, int height, float speed) {
+		this.texture = texture;
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		this.speed = speed;
+		
+	}
+	
+	public void Draw() {
+		DrawQaudTex(texture, x, y, width, height);
+	}
+}

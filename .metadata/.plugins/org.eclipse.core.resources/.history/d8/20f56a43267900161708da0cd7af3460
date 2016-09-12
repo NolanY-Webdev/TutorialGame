@@ -1,6 +1,6 @@
 package data;
 
-import static helpers.Artist.*;
+import static helpers.Artist.BeginSession;
 //import java.util.Random;
 import org.lwjgl.opengl.Display;
 
@@ -42,13 +42,12 @@ public class Boot {
 	 
 		TileGrid mATS = new TileGrid(map); //macAirTileSize -> mATS (1408 x 832 / 22x14 64 bit tiles)
 		mATS.SetTile(3, 4, mATS.GetTile(2, 4).getType());
-		Enemy e = new Enemy(QuickLoad("enemy1"), mATS.GetTile(10, 10), 64, 64, 2);
 		
 		
 		while (!Display.isCloseRequested()) {
 			
 			mATS.Draw();
-			e.Draw();
+			
 			Display.update();
 			Display.sync(60);
 

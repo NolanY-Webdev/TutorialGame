@@ -35,3 +35,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
   @  https://youtu.be/O1vQABTMMgo?t=15m34s
   got my map to match the one in the video as well, figured it was best for learning. At least I know I can easily change things around in my own way. Perhaps I will learn a better method in the future.
+
+  @ https://youtu.be/O1vQABTMMgo?t=21m20s
+  first enemy to show on screen, committing progress.

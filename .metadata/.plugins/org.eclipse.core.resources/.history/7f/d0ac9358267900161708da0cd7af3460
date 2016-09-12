@@ -48,7 +48,7 @@ public class Boot {
 		while (!Display.isCloseRequested()) {
 			
 			mATS.Draw();
-			e.Draw();
+			
 			Display.update();
 			Display.sync(60);
 

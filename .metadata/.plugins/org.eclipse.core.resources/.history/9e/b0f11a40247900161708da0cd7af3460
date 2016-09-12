@@ -1,0 +1,13 @@
+package data;
+
+import static helpers.Artist.*;
+
+
+
+public class Enemy {
+	private int width, height, health;
+	private float speed, x, y;
+	private Texture texture;
+	private Tile startTile;
+	
+}
