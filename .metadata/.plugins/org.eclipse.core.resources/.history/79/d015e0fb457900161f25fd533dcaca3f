@@ -55,7 +55,7 @@ public class Boot {
 			
 			mATS.Draw();
 			wave1.Update();
-			player.Update();
+			player.SetTile();
 			Display.update();
 			Display.sync(60);
 

@@ -47,7 +47,7 @@ public class Boot {
 		mATS.SetTile(3, 4, mATS.GetTile(2, 4).getType());
 		Enemy e = new Enemy(QuickLoad("enemy1"), mATS.GetTile(10, 10), 64, 64, 10);
 		Wave wave1 = new Wave(20, e);
-		Player player = new Player(mATS);
+		
 		while (!Display.isCloseRequested()) {
 			Clock.update();
 
@@ -55,7 +55,7 @@ public class Boot {
 			
 			mATS.Draw();
 			wave1.Update();
-			player.Update();
+			
 			Display.update();
 			Display.sync(60);
 

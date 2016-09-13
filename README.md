@@ -45,3 +45,8 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
   @ https://youtu.be/g4OwOcKq148?t=21m17s
   Got enemy wave class creation working.
+
+
+  @ https://youtu.be/wn9YK2oVcI0?list=PLFUqwj4q1Zr8GHs6bO4d6gxMGUh_2pcNg
+  Everything working and up to date with latest video.
+
