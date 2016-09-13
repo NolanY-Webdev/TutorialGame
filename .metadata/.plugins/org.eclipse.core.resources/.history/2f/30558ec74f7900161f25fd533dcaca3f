@@ -123,8 +123,4 @@ public class Enemy {
 		this.first = first;
 	}
 
-	public TileGrid getTileGrid() {
-		return grid;
-	}
-	
 }

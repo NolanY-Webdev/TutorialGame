@@ -36,12 +36,9 @@ public class Enemy {
 
 	private boolean pathContinues() {
 		boolean answer = true;
-		Tile enemyTile = grid.GetTile((int) (x / 64), (int) (y / 64));
-		Tile nextXTile = grid.GetTile((int) (x / 64) + 1, (int) (y / 64));
+		Tile enemyTile = grid.GetTile((int) (x / 64), (int) (y / 64))
 		
-		if(enemyTile.getType() != nextXTile.getType()) {
-			answer = false;
-		}
+		
 		
 		
 		return answer;
@@ -123,8 +120,4 @@ public class Enemy {
 		this.first = first;
 	}
 
-	public TileGrid getTileGrid() {
-		return grid;
-	}
-	
 }

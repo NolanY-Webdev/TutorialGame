@@ -1,8 +1,8 @@
 package data;
 
+import org.newdawn.slick.opengl.Texture;
 import static helpers.Artist.*;
 import static helpers.Clock.*;
-import org.newdawn.slick.opengl.*;
 
 public class Enemy {
 	private int width, height, health;
@@ -11,7 +11,8 @@ public class Enemy {
 	private Tile startTile;
 	private boolean first = true;
 	private TileGrid grid;
-
+	
+	
 	public Enemy(Texture texture, Tile startTile, TileGrid grid, int width, int height, float speed) {
 		this.texture = texture;
 		this.startTile = startTile;
@@ -23,30 +24,26 @@ public class Enemy {
 		this.grid = grid;
 
 	}
-
+	
 	public void Update() {
-		if (first) {
+		if(first) {
 			first = false;
 		} else {
-			if (pathContinues()) {
-				x += Delta() * speed;
+			if(pathContinues()){
+				x += Delta() * speed;			
 			}
+
 		}
 	}
-
+	
 	private boolean pathContinues() {
 		boolean answer = true;
-		Tile enemyTile = grid.GetTile((int) (x / 64), (int) (y / 64));
-		Tile nextXTile = grid.GetTile((int) (x / 64) + 1, (int) (y / 64));
 		
-		if(enemyTile.getType() != nextXTile.getType()) {
-			answer = false;
-		}
 		
 		
 		return answer;
 	}
-
+	
 	public void Draw() {
 		DrawQuadText(texture, x, y, width, height);
 	}
@@ -122,9 +119,7 @@ public class Enemy {
 	public void setFirst(boolean first) {
 		this.first = first;
 	}
-
-	public TileGrid getTileGrid() {
-		return grid;
-	}
+	
+	
 	
 }
