@@ -53,3 +53,13 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   @ https://youtu.be/wn9YK2oVcI0?t=6m2s
   Adding logic to pathing.
 
+
+##Day 5
+  little burnt, really didn't get anything done
+  consider it a personal mental health day
+
+##Day 6
+  @ https://youtu.be/wn9YK2oVcI0?t=28m0s
+  got code directly matching video
+  everything functional at that point.
+

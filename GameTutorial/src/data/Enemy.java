@@ -2,6 +2,9 @@ package data;
 
 import static helpers.Artist.*;
 import static helpers.Clock.*;
+
+import java.util.ArrayList;
+
 import org.newdawn.slick.opengl.*;
 
 public class Enemy {
@@ -11,6 +14,9 @@ public class Enemy {
 	private Tile startTile;
 	private boolean first = true;
 	private TileGrid grid;
+	
+	private ArrayList<Checkpoint> checkpoints;
+	private int[] directions;
 
 	public Enemy(Texture texture, Tile startTile, TileGrid grid, int width, int height, float speed) {
 		this.texture = texture;
@@ -21,6 +27,13 @@ public class Enemy {
 		this.height = height;
 		this.speed = speed;
 		this.grid = grid;
+		this.checkpoints = new ArrayList<Checkpoint>();
+		this.directions = new int[2];
+		this.directions[0] = 0;
+		//0 = X direction
+		this.directions[1] = 0;
+		//1 = Y direction
+		directions = FindNextDir(startTile);
 
 	}
 
@@ -28,24 +41,51 @@ public class Enemy {
 		if (first) {
 			first = false;
 		} else {
-			if (pathContinues()) {
-				x += Delta() * speed;
-			}
+			x += Delta() * directions[0];
+			y += Delta() * directions[1];
 		}
 	}
 
-	private boolean pathContinues() {
-		boolean answer = true;
-		Tile enemyTile = grid.GetTile((int) (x / 64), (int) (y / 64));
-		Tile nextXTile = grid.GetTile((int) (x / 64) + 1, (int) (y / 64));
+	private int[] FindNextDir(Tile s) {
+		int[] dir = new int[2];
+		Tile u = grid.GetTile(s.getXPlace(), s.getYPlace() - 1);
+		Tile d = grid.GetTile(s.getXPlace(), s.getYPlace() + 1);
+		Tile r = grid.GetTile(s.getXPlace() + 1, s.getYPlace());
+		Tile l = grid.GetTile(s.getXPlace() - 1, s.getYPlace());
 		
-		if(enemyTile.getType() != nextXTile.getType()) {
-			answer = false;
+		if(s.getType() == u.getType()) {
+			dir[0] = 0;
+			dir[1] = -1;
+		} else if (s.getType() == r.getType()) {
+			dir[0] = 1;
+			dir[1] = 0;
+		} else if (s.getType() == d.getType()) {
+			dir[0] = 0;
+			dir[1] = 1;
+		} else if (s.getType() == l.getType()) {
+			dir[0] = -1;
+			dir[1] = 0;
+		} else {
+			System.out.println("NO DIRECTION FOUND");
 		}
+			
 		
-		
-		return answer;
+		return dir;
 	}
+	
+	
+//	private boolean pathContinues() {
+//		boolean answer = true;
+//		Tile enemyTile = grid.GetTile((int) (x / 64), (int) (y / 64));
+//		Tile nextXTile = grid.GetTile((int) (x / 64) + 1, (int) (y / 64));
+//		
+//		if(enemyTile.getType() != nextXTile.getType()) {
+//			answer = false;
+//		}
+//		
+//		
+//		return answer;
+//	}
 
 	public void Draw() {
 		DrawQuadText(texture, x, y, width, height);
