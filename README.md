@@ -63,3 +63,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   got code directly matching video
   everything functional at that point.
 
+  @ https://www.youtube.com/watch?v=LLBGr6Co3BQ
+  code all caught up to video
+

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.newdawn.slick.opengl.*;
 
 public class Enemy {
-	private int width, height, health;
+	private int width, height, health, currentCheckpoint;
 	private float speed, x, y;
 	private Texture texture;
 	private Tile startTile;
@@ -34,18 +34,92 @@ public class Enemy {
 		this.directions[1] = 0;
 		//1 = Y direction
 		directions = FindNextDir(startTile);
-
+		this.currentCheckpoint = 0;
+		PopulateCheckpointList();
+		
+		
 	}
 
 	public void Update() {
 		if (first) {
 			first = false;
 		} else {
-			x += Delta() * directions[0];
-			y += Delta() * directions[1];
+			if(CheckpointReached()) {
+				currentCheckpoint++;
+			} else {
+				x += Delta() * checkpoints.get(currentCheckpoint).getxDirection() * speed;
+				y += Delta() * checkpoints.get(currentCheckpoint).getyDirection() * speed;
+			}
 		}
 	}
 
+	private boolean CheckpointReached() {
+		boolean reached = false;
+		Tile t = checkpoints.get(currentCheckpoint).getTile();
+		//position check with variable tolerance of 3 (arbitrary)
+		if (x > t.getX() - 3 	&& 
+			x < t.getX() + 3 	&& 
+			y > t.getY() -3 	&& 
+			y < t.getY() + 3	) {
+			reached = true;
+			x = t.getX();
+			y = t.getY();
+		}
+		
+		return reached;
+	}
+	
+	private void PopulateCheckpointList() {
+		//or declare directions here and leave declarative "=" out V
+		checkpoints.add(FindNextCheck(startTile, directions = FindNextDir(startTile)));
+		
+		int counter = 0;
+		boolean cont = true;
+		while (cont) {
+			int[] currentDir = FindNextDir(checkpoints.get(counter).getTile());
+			//counter portion is cp inf loop failsafe
+			if(currentDir[0] == 2 || counter == 20) {
+				cont = false;
+			} else {
+				checkpoints.add(FindNextCheck(checkpoints.get(counter).getTile(),
+						directions = FindNextDir(checkpoints.get(counter).getTile())));
+			}
+			counter++;
+		}
+	}
+	
+	private Checkpoint FindNextCheck(Tile s, int[] dir) {
+		Tile next = null;
+		Checkpoint c = null;
+		
+		//Boolean to check if next CP is found
+		boolean found = false;
+		
+		//loop increment integer
+		int counter = 1;
+		
+		while(!found) {
+			
+			if (s.getType() != grid.GetTile(
+						s.getXPlace() + dir[0] * counter, 
+						s.getYPlace() + dir[1] * counter).getType()) 
+			{
+				found = true;
+				//move counter back to previous tile before change
+				counter -= 1;
+				next = grid.GetTile(
+						s.getXPlace() + dir[0] * counter, 
+						s.getYPlace() + dir[1] * counter);
+			}
+			
+			counter++;
+		}
+		
+		c = new Checkpoint(next, dir[0], dir[1]);
+		return c;
+		
+	}
+	
 	private int[] FindNextDir(Tile s) {
 		int[] dir = new int[2];
 		Tile u = grid.GetTile(s.getXPlace(), s.getYPlace() - 1);
@@ -66,6 +140,8 @@ public class Enemy {
 			dir[0] = -1;
 			dir[1] = 0;
 		} else {
+			dir[0] = 2;
+			dir[1] = 2;
 			System.out.println("NO DIRECTION FOUND");
 		}
 			
