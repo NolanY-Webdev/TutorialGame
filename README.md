@@ -69,6 +69,9 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   @ https://youtu.be/LLBGr6Co3BQ?t=7m18s
   somewhere near where I had ended
 
-  ##Day 7 and 8
+##Day 7 and 8
   stuff got done, on video 30 now
   https://www.youtube.com/watch?v=3jOhfVt9PZc
+  have been trying to work off projector and that has made this log a bit more out of the way in terms of verifying im on the right youtube link and all. Tower base tiles have been implemented spawned in the same fashion enemies are.
+
+  Interesting later project would be to recreate minecraft or a similar more stupid clone. Perhaps design any sort of 3d project that would allow the user to expolore to some extent.
