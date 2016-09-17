@@ -66,3 +66,9 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   @ https://www.youtube.com/watch?v=LLBGr6Co3BQ
   code all caught up to video
 
+  @ https://youtu.be/LLBGr6Co3BQ?t=7m18s
+  somewhere near where I had ended
+
+  ##Day 7 and 8
+  stuff got done, on video 30 now
+  https://www.youtube.com/watch?v=3jOhfVt9PZc
