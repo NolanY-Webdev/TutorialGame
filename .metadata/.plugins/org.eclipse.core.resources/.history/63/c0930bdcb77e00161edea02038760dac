@@ -21,10 +21,8 @@ public class WaveManager {
 	}
 	
 	public void update() {
-		if(!currentWave.isCompleted()) {
+		if(currentWave != null) {
 			currentWave.Update();
-		} else if (currentWave.isCompleted()) {
-			System.out.println("Wave " + waveNumber + " completed.");
 		}
 	}
 	

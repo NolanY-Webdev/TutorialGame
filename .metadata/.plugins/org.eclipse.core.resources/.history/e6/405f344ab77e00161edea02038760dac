@@ -21,17 +21,15 @@ public class WaveManager {
 	}
 	
 	public void update() {
-		if(!currentWave.isCompleted()) {
+		if(currentWave != null) {
 			currentWave.Update();
-		} else if (currentWave.isCompleted()) {
-			System.out.println("Wave " + waveNumber + " completed.");
 		}
 	}
 	
 	public void newWave() {
 		currentWave = new Wave(enemyType, spawnTime, enemiesPerWave);
 		waveNumber++;
-		System.out.println("Current Wave: " + waveNumber);
+		System.out.println("Wave: " + waveNumber);
 	}
 	
 }

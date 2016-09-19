@@ -91,3 +91,7 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
   https://youtu.be/3yUzOKp4BT0?t=2s
   that last episode was a bit of a nightmare, strayed from video and got a bit lost, code seems up to par with video minus tower deviations made before. So much hopping around randomly last time. Guess it's good practice at the least.
+
+
+  https://youtu.be/XRcmPVsi9V4?t=20s
+  Got waves implemented to an extent.

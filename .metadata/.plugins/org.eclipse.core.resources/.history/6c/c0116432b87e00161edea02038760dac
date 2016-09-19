@@ -25,12 +25,10 @@ public class Wave {
 
 	public void Update() {
 		boolean allEnemiesDead = true;
-		if(enemyList.size() < enemiesPerWave) {
-			timeSinceLastSpawn += Delta();
-			if (timeSinceLastSpawn > spawnTime) {
-				Spawn();
-				timeSinceLastSpawn = 0;
-			}
+		timeSinceLastSpawn += Delta();
+		if (timeSinceLastSpawn > spawnTime) {
+			Spawn();
+			timeSinceLastSpawn = 0;
 		}
 
 		for (Enemy e : enemyList) {
@@ -39,9 +37,6 @@ public class Wave {
 				e.Draw();
 				allEnemiesDead = false;
 			}
-		}
-		if(allEnemiesDead) {
-			waveCompleted = true;
 		}
 	}
 
