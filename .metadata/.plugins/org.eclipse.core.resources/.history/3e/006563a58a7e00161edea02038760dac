@@ -1,0 +1,13 @@
+package data;
+
+public class Game {
+
+	
+	public Game () {
+		
+	}
+	
+	public void update() {
+		
+	}
+}

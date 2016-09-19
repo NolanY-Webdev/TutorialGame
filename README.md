@@ -55,8 +55,8 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
 
 ##Day 5
-  little burnt, really didn't get anything done
-  consider it a personal mental health day
+  not feeling so good, really didn't get anything done
+  consider it a personal health day
 
 ##Day 6
   @ https://youtu.be/wn9YK2oVcI0?t=28m0s
@@ -69,9 +69,20 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   @ https://youtu.be/LLBGr6Co3BQ?t=7m18s
   somewhere near where I had ended
 
-##Day 7 and 8
-  stuff got done, on video 30 now
+##Day 7/8
+  stuff* got done, on video 30 now
   https://www.youtube.com/watch?v=3jOhfVt9PZc
   have been trying to work off projector and that has made this log a bit more out of the way in terms of verifying im on the right youtube link and all. Tower base tiles have been implemented spawned in the same fashion enemies are.
 
-  Interesting later project would be to recreate minecraft or a similar more stupid clone. Perhaps design any sort of 3d project that would allow the user to expolore to some extent.
+  Interesting later project would be to recreate minecraft or a similar, if not stupider, clone. Perhaps design any sort of 3d project that would allow the user to expolore to some extent. Maybe even reuse the amazing textures from this game or something.
+          (*Stuff: some bug fixes and the base tile level of towers)
+
+## Day 9 (I think?)
+  https://youtu.be/S-WiE_O4zjM?t=4m11s
+  Worked a bit over the weekend and this morning. Not a ton but kept up the rythm of working more and more. Need to keep logging everything. Aim is to get really far and log a lot today.
+
+    -More random ideas, Pandora radio remote control app.
+
+  https://youtu.be/S-WiE_O4zjM?t=5m50s
+  not much video progress but much personal
+    BRANCHING FROM VIDEO, NOTE TOWER DIFFERENCES added fireRate and projectileSpeed to tower construction and passing variables directly to Projectile class.

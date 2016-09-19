@@ -13,6 +13,8 @@ public class Wave {
 		this.enemyType = enemyType;
 		this.spawnTime = spawnTime;
 		enemyList = new ArrayList<Enemy>();
+		
+		Spawn();
 	}
 
 	public void Update() {

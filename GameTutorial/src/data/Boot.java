@@ -30,9 +30,13 @@ public class Boot {
 				{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 } };
 
 		
-		TileGrid mATS = new TileGrid(map); // macAirTileSize -> mATS RANDOM MAP
-										   // (1408 x 832 / 22x13 64 bit tiles)
+		Game game = new Game(map);
 
+		
+//		OLD CODE NOW HANDLED BY 'GAME'	
+//		TileGrid mATS = new TileGrid(map); // macAirTileSize -> mATS RANDOM MAP
+//										   // (1408 x 832 / 22x13 64 bit tiles)
+//
 		
 //		Random rand = new Random();
 //		
@@ -50,21 +54,30 @@ public class Boot {
 //											// (1408 x 832 / 22x13 64 bit tiles)
 //		
 		
+//		OLD CODE NOW IN 'GAME'
 		
-		mATS.SetTile(3, 4, mATS.GetTile(2, 4).getType());
-		Enemy e = new Enemy(QuickLoad("enemy1"), mATS.GetTile(10, 8), mATS, 64, 64, 5);
-		Wave wave1 = new Wave(20, e);
-		Player player = new Player(mATS);
+//		mATS.SetTile(3, 4, mATS.GetTile(2, 4).getType());
+//		Enemy e = new Enemy(QuickLoad("enemy1"), mATS.GetTile(10, 8), mATS, 64, 64, 5);
+//		Wave wave1 = new Wave(20, e);
+//		Player player = new Player(mATS);
+//		
+//		TowerCannon tower = new TowerCannon(QuickLoad("cannonBase"), mATS.GetTile(8,8), 10);
+//		
 		
-		TowerCannon tower = new TowerCannon(QuickLoad("cannonBase"), mATS.GetTile(8,8), 10);
+		
 		
 		while (!Display.isCloseRequested()) {
 			Clock.update();
 
-			mATS.Draw();
-			wave1.Update();
-			player.Update();
-			tower.draw();
+			game.update();
+			
+//			OLD CODE NOW HANDLED BY 'GAME'
+			
+//			mATS.Draw();
+//			wave1.Update();
+//			player.Update();
+//			tower.update();
+			
 			Display.update();
 			Display.sync(60);
 
