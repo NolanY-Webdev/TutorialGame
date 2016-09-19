@@ -86,3 +86,8 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
   https://youtu.be/S-WiE_O4zjM?t=5m50s
   not much video progress but much personal
     BRANCHING FROM VIDEO, NOTE TOWER DIFFERENCES added fireRate and projectileSpeed to tower construction and passing variables directly to Projectile class.
+
+    don't quite agree with how he is setting up the Wave/WaveManager but I'll follow along for now
+
+  https://youtu.be/3yUzOKp4BT0?t=2s
+  that last episode was a bit of a nightmare, strayed from video and got a bit lost, code seems up to par with video minus tower deviations made before. So much hopping around randomly last time. Guess it's good practice at the least.

@@ -23,7 +23,7 @@ public class Game {
 	
 	public void update() {
 		grid.Draw();
-		waveManager.update();
+		wave.Update();
 		player.Update();
 		
 		tower.update();
