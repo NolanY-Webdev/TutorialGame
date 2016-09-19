@@ -14,9 +14,9 @@ public class Game {
 	public Game (int[][] map) {
 		grid = new TileGrid(map);
 		player = new Player(grid);
-		wave = new Wave(4, new Enemy(QuickLoad("enemy1"), grid.GetTile(10, 8), grid, 64, 64, 40));
+		wave = new Wave(2, new Enemy(QuickLoad("enemy1"), grid.GetTile(10, 8), grid, 64, 64, 40));
 		
-		tower = new TowerCannon(QuickLoad("cannonBase"), grid.GetTile(8,8), 10, 2, 80);
+		tower = new TowerCannon(QuickLoad("cannonBase"), grid.GetTile(8,8), 10, 2, 100);
 		
 		
 	}
