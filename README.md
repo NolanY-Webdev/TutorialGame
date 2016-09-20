@@ -1,5 +1,6 @@
 # TutorialGame
-  Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09erJu7U
+  - Creating a game following youtube tutorial
+  - https://www.youtube.com/watch?v=rfR09erJu7U
 
 ##Day 1
   @ https://www.youtube.com/watch?v=MgSApgveCjU
