@@ -105,3 +105,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 ## Day 10
 https://youtu.be/YoBFN0WcM2w?t=12s
 Makin progress, towers no longer firing crooked bullets. Time multiplier implemented on Right and Left arrow keys.
+
+https://youtu.be/yKCpcQleRqs
+video 39 adding button functionality

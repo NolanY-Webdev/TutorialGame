@@ -1,0 +1,18 @@
+package helpers;
+
+import data.Editor;
+import data.Game;
+import data.MainMenu;
+
+public class StateManager {
+
+	
+	public static enum GameState {
+		MAINMENU, GAME, EDITOR
+	}
+	
+	public static GameState gameState;
+	public static MainMenu mainMenu;
+	public static Game game;
+	public static Editor editor;
+}
