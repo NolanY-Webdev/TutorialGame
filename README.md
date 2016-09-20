@@ -101,3 +101,7 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
   https://youtu.be/5Ttg8n6cWFA?t=20s
   Place towers on a click, did mine a bit differently than he did his but I dont think it will cause any problems in the future. Getting the hang of Java :D
+
+## Day 10
+https://youtu.be/YoBFN0WcM2w?t=12s
+Makin progress, towers no longer firing crooked bullets. Time multiplier implemented on Right and Left arrow keys.

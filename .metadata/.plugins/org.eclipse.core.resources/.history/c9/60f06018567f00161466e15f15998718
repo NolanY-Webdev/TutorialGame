@@ -53,8 +53,8 @@ public class Player {
 		while (Keyboard.next()) {
 			if (Keyboard.getEventKey() == Keyboard.KEY_RIGHT && Keyboard.getEventKeyState()) {
 				Clock.ChangeMultiplier(0.2f);
-			} else if (Keyboard.getEventKey() == Keyboard.KEY_LEFT && Keyboard.getEventKeyState()) {
-				Clock.ChangeMultiplier(-0.2f);
+			} else if (Keyboard.getEventKey() == Keyboard.KEY_RIGHT && Keyboard.getEventKeyState()) {
+				Clock.ChangeMultiplier(0.2f);
 			} else if (Keyboard.getEventKey() == Keyboard.KEY_T && Keyboard.getEventKeyState()) {
 				towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.GetTile(17,7), 10, waveManager.getCurrentWave().getEnemyList(), 2, 700));
 			}
