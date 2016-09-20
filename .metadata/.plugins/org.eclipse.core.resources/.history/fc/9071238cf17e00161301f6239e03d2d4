@@ -39,13 +39,11 @@ public class Player {
 		}
 		
 		//Mouse input
-		if (Mouse.isButtonDown(0) && !leftMouseButtonDown) {
+		if (Mouse.isButtonDown(0)) {
 			
-			towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.GetTile( (int) Math.floor(Mouse.getX() / 64), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / 64)), 10, waveManager.getCurrentWave().getEnemyList(), 2, 700));
+			
 //			setTile();
 		}
-		
-		leftMouseButtonDown = Mouse.isButtonDown(0);
 		
 		//Keyboard input
 		while (Keyboard.next()) {

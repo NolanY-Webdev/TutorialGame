@@ -98,3 +98,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
   https://youtu.be/e3-TZ7TfJjA?t=23s
   Towers are tracking enemies now, not firing in correct direction though
+
+  https://youtu.be/5Ttg8n6cWFA?t=20s
+  Place towers on a click, did mine a bit differently than he did his but I dont think it will cause any problems in the future. Getting the hang of Java :D

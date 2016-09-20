@@ -47,7 +47,7 @@ public class TowerCannon {
 
 	private void fire() {
 		tSLS = 0;
-		projectiles.add(new Projectile(QuickLoad("bullet"), x + 32, y + 32, projectileSpeed, damage, target));
+		projectiles.add(new Projectile(QuickLoad("bullet"), x + 32, y + 32, projectileSpeed, damage));
 	}
 	
 	public void update() {

@@ -21,28 +21,16 @@ public class Projectile {
 		this.target = target;
 		this.xVelocity = 0;
 		this.yVelocity = 0;
-		calculateDirection();
 	}
 	
 	private void calculateDirection() {
-		float totalAllowedMovement = 1.0f;
 		float xDistanceFromTarget = Math.abs(target.getX() - x);
 		float yDistanceFromTarget = Math.abs(target.getY() - y);
-		float totalDistanceFromTarget = xDistanceFromTarget + yDistanceFromTarget;
-		float xPercentageOfMovement = xDistanceFromTarget/totalDistanceFromTarget;
-		xVelocity = xPercentageOfMovement;
-		yVelocity = totalAllowedMovement - xPercentageOfMovement;
-		if(target.getX() < x) {
-			xVelocity *= -1;
-		}
-		if(target.getY() < y) {
-			yVelocity *= -1;
-		}
+		
 	}
 	
 	public void update () {
-		x += xVelocity * speed * Delta();
-		y += yVelocity * speed * Delta();
+		x += Delta() * speed;
 		draw();
 	}
 	

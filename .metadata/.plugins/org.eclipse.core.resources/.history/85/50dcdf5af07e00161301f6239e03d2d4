@@ -32,7 +32,7 @@ public class Projectile {
 		float xPercentageOfMovement = xDistanceFromTarget/totalDistanceFromTarget;
 		xVelocity = xPercentageOfMovement;
 		yVelocity = totalAllowedMovement - xPercentageOfMovement;
-		if(target.getX() < x) {
+		if(target.getX() > x) {
 			xVelocity *= -1;
 		}
 		if(target.getY() < y) {
