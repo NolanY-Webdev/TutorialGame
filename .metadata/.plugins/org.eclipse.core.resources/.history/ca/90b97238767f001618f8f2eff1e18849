@@ -26,9 +26,8 @@ public class UI {
 			Mouse.getX() < b.getX() + b.getWidth() &&
 			mouseY > b.getY() &&
 			mouseY < b.getY() + b.getHeight()) {
-				return true;
+		
 		}
-		return false;
 	}
 	
 	private Button getButton(String buttonName) {

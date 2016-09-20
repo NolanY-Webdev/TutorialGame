@@ -16,9 +16,7 @@ public class StateManager {
 	public static Game game;
 	public static Editor editor;
 	
-	
-	//TEMP VARS
-	static int[][] map = { 
+	int[][] map = { 
 			{ 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },
 			{ 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 },
@@ -32,10 +30,7 @@ public class StateManager {
 			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1 },
 			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
 			{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 } };
-	
 
-	
-	
 	public static void update() {
 		switch (gameState) {
 		case MAINMENU:
@@ -46,9 +41,8 @@ public class StateManager {
 			break;
 		case GAME: 
 			if(game == null) {
-				game = new Game(map);
+				game = new Game();
 			}
-			game.update();
 			break;
 		case EDITOR:
 			
