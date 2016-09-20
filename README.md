@@ -3,13 +3,10 @@
   - https://www.youtube.com/watch?v=rfR09erJu7U
 
 ##Day 1
-@ https://www.youtube.com/watch?v=MgSApgveCjU
-
-'''
-- Current files of Ecclipse workspace for game
-- Functional game window
-- No further progress
-'''
+  @ https://www.youtube.com/watch?v=MgSApgveCjU
+    - Current files of Ecclipse workspace for game
+    - Functional game window
+    - No further progress
 
 ##Day 2 or something
   @ https://youtu.be/O1vQABTMMgo?t=5m54s
