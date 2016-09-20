@@ -95,3 +95,6 @@ Creating a game following youtube tutorial https://www.youtube.com/watch?v=rfR09
 
   https://youtu.be/XRcmPVsi9V4?t=20s
   Got waves implemented to an extent.
+
+  https://youtu.be/e3-TZ7TfJjA?t=23s
+  Towers are tracking enemies now, not firing in correct direction though

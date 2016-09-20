@@ -8,13 +8,15 @@ import java.util.ArrayList;
 
 public class TowerCannon {
 
-	private float x, y, tSLS, fireRate, projectileSpeed;  //tSLS - timeSinceLastShot;
+	private float x, y, tSLS, fireRate, angle, projectileSpeed;  //tSLS - timeSinceLastShot;
 	private int width, height, damage;
 	private Texture baseTexture, cannonTexture;
 	private Tile startTile;
 	private ArrayList<Projectile> projectiles;
+	private ArrayList<Enemy> enemies;
+	private Enemy target;
 
-	public TowerCannon(Texture baseTexture, Tile startTile, int damage, float fireRate, float projectileSpeed) {
+	public TowerCannon(Texture baseTexture, Tile startTile, int damage, ArrayList<Enemy> enemies, float fireRate, float projectileSpeed) {
 		this.baseTexture = baseTexture;
 		this.cannonTexture = QuickLoad("cannonGun");
 		this.startTile = startTile;
@@ -27,7 +29,20 @@ public class TowerCannon {
 		this.projectileSpeed = projectileSpeed;
 		this.tSLS = 0;
 		this.projectiles = new ArrayList<Projectile>();
+		this.enemies = enemies;
+		this.target = targetingSystems(); //vs accquireTarget in vid
+		this.angle = calculateAngle();
+		
 
+	}
+	
+	private Enemy targetingSystems() {    //vs accquireTarget in vid
+		return enemies.get(0);
+	}
+	
+	private float calculateAngle() {
+		double angleTemp = Math.atan2(target.getY() - y, target.getX() - x);
+		return (float) Math.toDegrees(angleTemp) - 90;
 	}
 
 	private void fire() {
@@ -44,13 +59,13 @@ public class TowerCannon {
 		for(Projectile p: projectiles) {
 			p.update();
 		}
-		
+		angle = calculateAngle();
 		draw();
 	}
 
 	public void draw() {
 		DrawQuadText(baseTexture, x, y, width, height);
-		DrawQuadTextRotate(cannonTexture, x, y, width, height, 45);
+		DrawQuadTextRotate(cannonTexture, x, y, width, height, angle);
 
 	}
 
