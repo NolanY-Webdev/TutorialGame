@@ -16,7 +16,6 @@ public class Player {
 	private WaveManager waveManager;
 	private ArrayList<TowerCannon> towerList;
 	private Boolean leftMouseButtonDown;
-	private Boolean derpClick;
 	
 
 	public Player(TileGrid grid, WaveManager waveManager) {
@@ -28,8 +27,6 @@ public class Player {
 		this.index = 0;
 		this.waveManager = waveManager;
 		this.towerList = new ArrayList<TowerCannon>();
-		this.derpClick = false;
-		
 	}
 
 	public void setTile() {
@@ -70,9 +67,4 @@ public class Player {
 			index = 0;
 		}
 	}
-	
-	private Boolean getDerpClick () {
-		return this.derpClick;
-	}
-	
 }

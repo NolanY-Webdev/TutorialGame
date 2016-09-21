@@ -70,9 +70,4 @@ public class Player {
 			index = 0;
 		}
 	}
-	
-	private Boolean getDerpClick () {
-		return this.derpClick;
-	}
-	
 }
