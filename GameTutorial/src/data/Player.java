@@ -44,13 +44,14 @@ public class Player {
 		}
 		
 //		Mouse input
-		if (Mouse.isButtonDown(0) && !leftMouseButtonDown && derpClick) {
+		if (Mouse.isButtonDown(0) && !leftMouseButtonDown && !derpClick) {
 			
+			System.out.println("DID NOT DERP SAFELY");
 			towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.GetTile( (int) Math.floor(Mouse.getX() / 64), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / 64)), 10, waveManager.getCurrentWave().getEnemyList(), 2, 700));
 //			setTile();
-		} else if (Mouse.isButtonDown(0) && !leftMouseButtonDown && !derpClick) {
+		} else if (Mouse.isButtonDown(0) && !leftMouseButtonDown && derpClick) {
 			System.out.println("derped safely");
-			derpClick = false;
+			setDerpClick(false);
 		}
 		
 		leftMouseButtonDown = Mouse.isButtonDown(0);
