@@ -147,7 +147,7 @@
 
   REASON:
 
-    I am using a different resolution than he is in the video, by commenting out the tower placement on click code @ (Player.java:44) the game works perfectly fine.
+    I am using a different resolution than he is in the video. Click is attempting to place tower immediately upon starting. By commenting out the tower placement on click code @ (Player.java:44) the game works perfectly fine.
       - Current background giving funky x/y coords in comparison to game state page
       - sizing differences
       - need to fix tower placement so it is not trying to place a tower in a funky x/y position immediately as game begins
@@ -156,3 +156,8 @@
     Also: cleaned up and added git formatting the Readme
 
 
+## Day 11 (or so)
+  @ https://youtu.be/Ttg-1GVz_RM?t=2s
+    -Fixed old bug a while back
+    - need to remove the testing branch I blindly made
+    - ecclipse isnt happy about how the repo is saved in github (newbie mistake uploading more of workspace than just project ( sorry github :( )))

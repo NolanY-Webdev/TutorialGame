@@ -11,7 +11,6 @@ import helpers.Clock;
 public class Player {
 
 	private TileGrid grid;
-	private TileType[] types;
 	private int index;
 	private WaveManager waveManager;
 	private ArrayList<TowerCannon> towerList;
@@ -20,19 +19,10 @@ public class Player {
 
 	public Player(TileGrid grid, WaveManager waveManager) {
 		this.grid = grid;
-		this.types = new TileType[3];
-		this.types[0] = TileType.Grass;
-		this.types[1] = TileType.Dirt;
-		this.types[2] = TileType.Water;
 		this.index = 0;
 		this.waveManager = waveManager;
 		this.towerList = new ArrayList<TowerCannon>();
 		this.leftMouseButtonDown = true;
-	}
-
-	public void setTile() {
-		grid.SetTile((int) Math.floor(Mouse.getX() / 64), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / 64),
-				types[index]);
 	}
 
 	public void update() {
@@ -61,10 +51,5 @@ public class Player {
 		}
 	}
 
-	private void moveIndex() {
-		index++;
-		if (index > types.length - 1) {
-			index = 0;
-		}
-	}
+
 }

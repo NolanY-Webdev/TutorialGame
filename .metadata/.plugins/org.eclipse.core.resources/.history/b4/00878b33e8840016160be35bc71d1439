@@ -1,0 +1,10 @@
+package helpers;
+
+import data.TileGrid;
+
+public class Cartog {
+
+	public static void saveMap(String mapName, TileGrid grid) {
+		
+	}
+}

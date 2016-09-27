@@ -1,0 +1,25 @@
+package data;
+
+import static helpers.Artist.HEIGHT;
+
+import org.lwjgl.input.Mouse;
+
+public class Editor {
+
+	
+	private TileGrid grid;
+	
+	public Editor() {
+		grid = new TileGrid();
+	}
+	
+	public void update() {
+		grid.Draw();
+	}
+	
+	public void setTile() {
+		grid.SetTile((int) Math.floor(Mouse.getX() / 64), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / 64),
+				types[index]);
+	}
+
+}
