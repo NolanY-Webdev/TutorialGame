@@ -34,18 +34,15 @@ public class Cartog {
 		TileGrid grid = new TileGrid();
 		try{
 			BufferedReader br = new BufferedReader(new FileReader(mapName));
-			String data = br.readLine();
-			
-			for(int i = 0; i < grid.getTilesWide(); i++) {
-				for(int j = 0; j < grid.getTilesHigh(); j++) {
-					grid.SetTile(i, j, getTileType(data.substring(i * grid.getTilesHigh() + j, i * grid.getTilesHigh() + j + 1)));
-				}
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		for(int i = 0; i < grid.getTilesWide(); i++) {
+			for(int j = 0; j < grid.getTilesHigh(); j++) {
+				
+			}
+		}
 		
 		
 		return grid;

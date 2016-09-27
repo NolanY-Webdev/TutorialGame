@@ -1,9 +1,7 @@
 package helpers;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 
 import data.Tile;
@@ -30,45 +28,24 @@ public class Cartog {
 
 	}
 	
-	public static TileGrid loadMap(String mapName) {
-		TileGrid grid = new TileGrid();
-		try{
-			BufferedReader br = new BufferedReader(new FileReader(mapName));
-			String data = br.readLine();
-			
-			for(int i = 0; i < grid.getTilesWide(); i++) {
-				for(int j = 0; j < grid.getTilesHigh(); j++) {
-					grid.SetTile(i, j, getTileType(data.substring(i * grid.getTilesHigh() + j, i * grid.getTilesHigh() + j + 1)));
-				}
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-		
-		return grid;
-	}
 	
-	
-	public static TileType getTileType(String ID) {
-		TileType type = TileType.NULL;
-		switch(ID) {
+	public static Tile getTileType(String s) {
+		Tile t = null;
+		switch(s) {
 		case "0":
-			type = TileType.Grass;
+			ID = "0";
 			break;
-		case "1": 
-			type = TileType.Dirt;
+		case Dirt: 
+			ID = "1";
 			break;
-		case "2":
-			type = TileType.Water;
+		case Water:
+			ID = "2";
 			break;
-		case "3":
-			type = TileType.NULL;
+		case NULL:
+			ID = "3";
 			break;
 		}
-		return type;
+		return ID;
 	}
 	
 	public static String getTileID(Tile t) {
