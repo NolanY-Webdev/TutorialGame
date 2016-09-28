@@ -8,19 +8,23 @@ import static helpers.Artist.*;
 public class Projectile {
 
 	private Texture texture;
-	private float x, y, speed, xVelocity, yVelocity;
+	private float x, y, width, height, speed, xVelocity, yVelocity;
 	private int damage;
 	private Enemy target;
+	private boolean alive;
 	
-	public Projectile(Texture texture, float x, float y, float speed, int damage, Enemy target) {
+	public Projectile(Texture texture, float x, float y, float width, float height, float speed, int damage, Enemy target) {
 		this.texture = texture;
 		this.x = x;
 		this.y = y;
+		this.width = width;
+		this.height = height;
 		this.speed = speed;
 		this.damage = damage;
 		this.target = target;
-		this.xVelocity = 0;
-		this.yVelocity = 0;
+		this.xVelocity = 0f;
+		this.yVelocity = 0f;
+		this.alive = true;
 		calculateDirection();
 	}
 	
@@ -41,9 +45,16 @@ public class Projectile {
 	}
 	
 	public void update () {
-		x += xVelocity * speed * Delta();
-		y += yVelocity * speed * Delta();
-		draw();
+		if(alive) {
+			x += xVelocity * speed * Delta();
+			y += yVelocity * speed * Delta();
+			if(CheckCollision(x, y, width, height, target.getX(), target.getY(), target.getWidth(), target.getHeight())){
+				target.damage(this.damage);
+				alive = false;
+			}
+			draw();
+		}
+		
 	}
 	
 	public void draw() {

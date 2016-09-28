@@ -54,14 +54,24 @@ public class Artist {
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	}
 
-	public static void DrawQuad(float x, float y, float width, float height) {
-		glBegin(GL_QUADS);
-		glVertex2f(x, y);
-		glVertex2f(x + width, y);
-		glVertex2f(x + width, y + height);
-		glVertex2f(x, y + height);
-		glEnd();
+	public static boolean CheckCollision(float x1, float y1, float width1, float height1, float x2, float y2, float width2, float height2) {
+		if(x1 + width1/2 > x2 && x1 < x2 + width2/2 && y1 + height1/2 > y2 && y1 < y2 + height2/2) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+	
+	
+//	NO LONGER NEEDED?
+//	public static void DrawQuad(float x, float y, float width, float height) {
+//		glBegin(GL_QUADS);
+//		glVertex2f(x, y);
+//		glVertex2f(x + width, y);
+//		glVertex2f(x + width, y + height);
+//		glVertex2f(x, y + height);
+//		glEnd();
+//	}
 
 	public static void DrawQuadText(Texture tex, float x, float y, float width, float height) {
 		tex.bind();
