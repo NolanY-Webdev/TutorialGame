@@ -2,6 +2,8 @@
   - Creating a game following youtube tutorial
   - https://www.youtube.com/watch?v=rfR09erJu7U
 
+  -Realized about day 11 I saved the whole ecclipse workspace instead of just the project... (sorry github, newbie ecclipse user mistake) Will fix it when I figure out how to. Going to focus on finishing the project first.
+
 ##Day 1
   @ https://www.youtube.com/watch?v=MgSApgveCjU
 
@@ -166,3 +168,4 @@
   @ https://youtu.be/Zl2slZ4kCzk?t=14m55s
     - Have to fix wave manager not beginning new wave after breakPeriod.
     - Have to add breakPeriod for waves
+
