@@ -159,7 +159,7 @@
 
 
 ## Day 11 (or so)
-  Heatspike, late summer or something, could not work at all indoors with no AC. It was absolutely miserable.
+###Heatspike, late summer or something, could not work at all indoors with no AC. It was absolutely miserable.
   @ https://youtu.be/Ttg-1GVz_RM?t=2s
     - Fixed old bug from previous commit, it was from tower being placed immediately as game began. Systems to prevent this had not been properly hooked up (or had somehow become undone)
     - need to remove the testing branch I blindly made
