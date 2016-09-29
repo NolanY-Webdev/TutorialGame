@@ -70,8 +70,12 @@ public class TowerCannon {
 	}
 	
 	private float calculateAngle() {
-		double angleTemp = Math.atan2(target.getY() - y, target.getX() - x);
-		return (float) Math.toDegrees(angleTemp) - 90;
+		if(target.isAlive()){
+			double angleTemp = Math.atan2(target.getY() - y, target.getX() - x);
+			return (float) Math.toDegrees(angleTemp) - 90;	
+		} else {
+			return 0;
+		}
 	}
 
 	private void fire() {
@@ -88,7 +92,7 @@ public class TowerCannon {
 			target = targetingSystems();
 		}
 		
-		if(target == null || target.isAlive() == false) {
+		if(target == null || !target.isAlive() || !rangeCheck(target)) {
 			targetLocked = false;
 		}
 		

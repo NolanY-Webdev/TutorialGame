@@ -1,9 +1,11 @@
 package data;
 
+import static helpers.Clock.*;
+
 public class WaveManager {
 
 	
-	private float timeSinceLastWave, spawnTime;
+	private float timeSinceLastWave, spawnTime, waveBreakTimer;
 	private int waveNumber, enemiesPerWave;
 	private Enemy enemyType;
 	private Wave currentWave;
@@ -14,6 +16,7 @@ public class WaveManager {
 		this.spawnTime = spawnTime;
 		this.timeSinceLastWave = 0;
 		this.waveNumber = 0;
+		this.waveBreakTimer = 10;
 
 		this.currentWave = null;
 		
@@ -24,7 +27,13 @@ public class WaveManager {
 		if(!currentWave.isCompleted()) {
 			currentWave.Update();
 		} else if (currentWave.isCompleted()) {
-			System.out.println("Wave " + waveNumber + " completed.");
+			System.out.println("Wave " + waveNumber + " completed. Wave Break:" + timeSinceLastWave);
+			if(timeSinceLastWave >= waveBreakTimer) {
+				timeSinceLastWave = 0;
+				newWave();
+			} else if (timeSinceLastWave < waveBreakTimer) {
+				timeSinceLastWave += Delta();
+			}
 		}
 	}
 	

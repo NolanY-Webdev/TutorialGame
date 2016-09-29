@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import org.newdawn.slick.opengl.*;
 
-public class Enemy {
+public class Enemy implements Entity {
 	private int width, height, health, currentCheckpoint;
 	private float speed, x, y;
 	private Texture texture;
@@ -41,7 +41,7 @@ public class Enemy {
 		
 	}
 
-	public void Update() {
+	public void update() {
 		if (first) {
 			first = false;
 		} else {
@@ -167,7 +167,7 @@ public class Enemy {
 		alive = false;
 	}
 
-	public void Draw() {
+	public void draw() {
 		DrawQuadText(texture, x, y, width, height);
 	}
 

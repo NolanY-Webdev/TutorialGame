@@ -35,12 +35,12 @@ public class Wave {
 
 		for (Enemy e : enemyList) {
 			if(e.isAlive()) {
-				e.Update();
-				e.Draw();
+				e.update();
+				e.draw();
 				allEnemiesDead = false;
 			}
 		}
-		if(allEnemiesDead) {
+		if(allEnemiesDead && (enemyList.size() == enemiesPerWave)) {
 			waveCompleted = true;
 		}
 	}

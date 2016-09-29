@@ -1,0 +1,13 @@
+package data;
+
+public interface Entitiy {
+	public float getX();
+	public float getY();
+	public int getWidth();
+	public int getHeight();
+	public void setX(float x);
+	public void setY(float y);
+	public void draw();
+	
+	
+}
