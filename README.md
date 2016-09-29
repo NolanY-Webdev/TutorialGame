@@ -175,7 +175,6 @@
   @ https://youtu.be/YK9CQ6uFuNw?t=30s
 
     - there's a bug after placing too many towers or something
-
         Exception in thread "main" java.lang.NullPointerException
         at data.TowerCannon.calculateAngle(TowerCannon.java:73)
         at data.TowerCannon.update(TowerCannon.java:107)
@@ -184,5 +183,4 @@
         at helpers.StateManager.update(StateManager.java:51)
         at data.Boot.<init>(Boot.java:54)
         at data.Boot.main(Boot.java:72)
-
     - not entirely sure why
