@@ -8,9 +8,7 @@ public abstract class Tower implements Entity {
 	private Enemy target;
 	private Texture baseTexture, cannonTexture;
 	
-	public Tower( Texture baseTexture, Texture cannonTexture, float x, float y, int width, int height) {
-		this.baseTexture = baseTexture;
-		this.cannonTexture = cannonTexture;
+	public Tower(float x, float y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
