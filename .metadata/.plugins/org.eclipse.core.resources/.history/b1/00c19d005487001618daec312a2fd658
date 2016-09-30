@@ -1,0 +1,68 @@
+package data;
+
+import org.newdawn.slick.opengl.Texture;
+import static helpers.Artist.*;
+
+public abstract class Tower implements Entity {
+	private float x, y, fireRate, projectileSpeed;
+	private int width, height, damage;
+	private Enemy target;
+	private Texture baseTexture, cannonTexture;
+	private TowerType type;
+	
+	public Tower( TowerType type, float x, float y) {
+		this.type = type;
+		this.baseTexture = type.textures[0];
+		this.cannonTexture =  type.textures[1];
+		this.damage = type.damage;
+		this.fireRate = type.fireRate;
+		this.projectileSpeed = type.projectileSpeed;
+		this.x = x;
+		this.y = y;
+		this.width = TILE_SIZE;
+		this.height = TILE_SIZE;
+		
+		
+	}
+
+	public float getX() {
+		return x;
+	}
+
+	public float getY() {
+		return y;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setX(float x) {
+		this.x = x;
+	}
+
+	public void setY(float y) {
+		this.y = y;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public void draw() {
+		
+	}
+
+	public void update() {
+		
+	}
+
+}

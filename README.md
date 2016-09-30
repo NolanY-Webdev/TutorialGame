@@ -204,11 +204,13 @@
   @ https://youtu.be/IN-V4g6c7pU?t=7m26s    (or somewhere around there)
 
     - Adding TowerType enum for simple creation of multiple tower types.
-    - Paused video and working ahead freestyle to prep enum for future expected uses.
+    - Paused video and working freestyle to prep enum for future various uses.
 
-  @
+  @ https://youtu.be/fSJm1gDDIUM?t=30s
 
-    -
+    - Think I'm all caught up with video as far as code goes. Mine deviates in places but I'm pretty sure I know what I am doing... I think...
+    - Reconnecting tower AI and such in next vid.
+    - May take a day or so after this vid to wipe old test branch out and re-brach a complete variant of this codebase for testing. Seems like a good place in the videos to deviate.
 
   @
 
