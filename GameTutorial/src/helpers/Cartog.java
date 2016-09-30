@@ -16,7 +16,7 @@ public class Cartog {
 		String mapData = "";
 		for(int i = 0; i < grid.getTilesWide(); i++) {
 			for(int j = 0; j < grid.getTilesHigh(); j++) {
-				mapData += getTileID(grid.GetTile(i, j));
+				mapData += getTileID(grid.getTile(i, j));
 			}
 		}
 		try{
@@ -31,16 +31,18 @@ public class Cartog {
 	}
 	
 	public static TileGrid loadMap(String mapName) {
+
 		TileGrid grid = new TileGrid();
 		try{
+			
 			BufferedReader br = new BufferedReader(new FileReader(mapName));
 			String data = br.readLine();
-			
 			for(int i = 0; i < grid.getTilesWide(); i++) {
 				for(int j = 0; j < grid.getTilesHigh(); j++) {
-					grid.SetTile(i, j, getTileType(data.substring(i * grid.getTilesHigh() + j, i * grid.getTilesHigh() + j + 1)));
+					grid.setTile(i, j, getTileType(data.substring(i * grid.getTilesHigh() + j, i * grid.getTilesHigh() + j + 1)));
 				}
 			}
+			br.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

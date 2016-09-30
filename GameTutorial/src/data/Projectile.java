@@ -5,15 +5,15 @@ import static helpers.Clock.*;
 import static helpers.Artist.*;
 
 
-public class Projectile {
+public class Projectile implements Entity {
 
 	private Texture texture;
-	private float x, y, width, height, speed, xVelocity, yVelocity;
-	private int damage;
+	private float x, y, speed, xVelocity, yVelocity;
+	private int damage, width, height;
 	private Enemy target;
 	private boolean alive;
 	
-	public Projectile(Texture texture, float x, float y, float width, float height, float speed, int damage, Enemy target) {
+	public Projectile(Texture texture, float x, float y, int width, int height, float speed, int damage, Enemy target) {
 		this.texture = texture;
 		this.x = x;
 		this.y = y;
@@ -30,8 +30,8 @@ public class Projectile {
 	
 	private void calculateDirection() {
 		float totalAllowedMovement = 1.0f;
-		float xDistanceFromTarget = Math.abs(target.getX() - x - (Game.TILE_SIZE / 4) + (Game.TILE_SIZE / 2));
-		float yDistanceFromTarget = Math.abs(target.getY() - y - (Game.TILE_SIZE / 4) + (Game.TILE_SIZE / 2));
+		float xDistanceFromTarget = Math.abs(target.getX() - x - (TILE_SIZE / 4) + (TILE_SIZE / 2));
+		float yDistanceFromTarget = Math.abs(target.getY() - y - (TILE_SIZE / 4) + (TILE_SIZE / 2));
 		float totalDistanceFromTarget = xDistanceFromTarget + yDistanceFromTarget;
 		float xPercentageOfMovement = xDistanceFromTarget/totalDistanceFromTarget;
 		xVelocity = xPercentageOfMovement;
@@ -59,6 +59,38 @@ public class Projectile {
 	
 	public void draw() {
 		DrawQuadText(texture, x, y, 32, 32);
+	}
+
+	public float getX() {
+		return x;
+	}
+
+	public float getY() {
+		return y;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setX(float x) {
+		this.x = x;
+	}
+
+	public void setY(float y) {
+		this.y = y;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
 	}
 	
 }

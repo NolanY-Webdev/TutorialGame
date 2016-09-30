@@ -184,3 +184,111 @@
         at data.Boot.<init>(Boot.java:54)
         at data.Boot.main(Boot.java:72)
     - not entirely sure why
+
+
+## Day 12
+
+  still @ https://youtu.be/YK9CQ6uFuNw?t=30s
+    - Bug was being caused by targeting AI mixed with tower range restrictions causing game to crash when towers were outside of proper targeting range.
+    - Spent the morning fixing the bug from the targeting AI.
+    - Towers will now only shoot enemies within range and will not crash the game after derping hard.
+
+  @ https://youtu.be/tza3fqIZaNM?t=7m31s
+
+    - Helped my neighbor move, took twice as long as expected but glad I didn't leave him to do it alone.
+    - Adding abstract tower class to game, not sure why he hasn't added a cannon/base texture differentiation.
+    - Pretty burnt after moving furniture for over four hours, logging and picking things up tomorrow.
+
+## Day 13
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -
+
+  @
+
+    -

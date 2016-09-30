@@ -2,6 +2,7 @@ package data;
 
 import java.util.ArrayList;
 import static helpers.Clock.*;
+import static helpers.Artist.*;
 
 public class Wave {
 
@@ -20,15 +21,15 @@ public class Wave {
 		this.waveCompleted = false;
 		this.enemyList = new ArrayList<Enemy>();
 		
-		Spawn();
+		spawn();
 	}
 
-	public void Update() {
+	public void update() {
 		boolean allEnemiesDead = true;
 		if(enemyList.size() < enemiesPerWave) {
 			timeSinceLastSpawn += Delta();
 			if (timeSinceLastSpawn > spawnTime) {
-				Spawn();
+				spawn();
 				timeSinceLastSpawn = 0;
 			}
 		}
@@ -45,8 +46,8 @@ public class Wave {
 		}
 	}
 
-	private void Spawn() {
-		enemyList.add(new Enemy(enemyType.getTexture(), enemyType.getStartTile(), enemyType.getTileGrid(), enemyType.getHealth(), 64, 64, enemyType.getSpeed()));
+	private void spawn() {
+		enemyList.add(new Enemy(enemyType.getTexture(), enemyType.getStartTile(), enemyType.getTileGrid(), enemyType.getHealth(), TILE_SIZE, TILE_SIZE, enemyType.getSpeed()));
 	}
 	
 	public boolean isCompleted() {

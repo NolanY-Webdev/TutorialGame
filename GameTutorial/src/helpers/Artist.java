@@ -30,7 +30,7 @@ import org.newdawn.slick.util.ResourceLoader;
 
 public class Artist {
 
-	public static final int WIDTH = 1408, HEIGHT = 832;
+	public static final int WIDTH = 1408, HEIGHT = 832, TILE_SIZE = 64;;
 
 	public static void BeginSession() {
 		Display.setTitle("Game Tutorial");

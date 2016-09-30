@@ -1,10 +1,12 @@
 package data;
 
+import org.newdawn.slick.opengl.Texture;
 
-
-public class Tower implements Entity {
+public abstract class Tower implements Entity {
 	private float x, y;
-	private int width, height;
+	private int width, height, damage;
+	private Enemy target;
+	private Texture texture;
 	
 	public Tower(float x, float y, int width, int height) {
 		this.x = x;

@@ -11,7 +11,6 @@ import helpers.Clock;
 public class Player {
 
 	private TileGrid grid;
-	private int index;
 	private WaveManager waveManager;
 	private ArrayList<TowerCannon> towerList;
 	private Boolean leftMouseButtonDown;
@@ -19,7 +18,6 @@ public class Player {
 
 	public Player(TileGrid grid, WaveManager waveManager) {
 		this.grid = grid;
-		this.index = 0;
 		this.waveManager = waveManager;
 		this.towerList = new ArrayList<TowerCannon>();
 		this.leftMouseButtonDown = true;
@@ -35,7 +33,7 @@ public class Player {
 		//Mouse input
 		if (Mouse.isButtonDown(0) && !leftMouseButtonDown) {
 			
-			towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.GetTile( (int) Math.floor(Mouse.getX() / 64), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / 64)), 3, 800, waveManager.getCurrentWave().getEnemyList(), 2, 700));
+			towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.getTile( (int) Math.floor(Mouse.getX() / TILE_SIZE), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / TILE_SIZE)), 1, 2000, waveManager.getCurrentWave().getEnemyList(), 2, 700));
 		}
 		
 		leftMouseButtonDown = Mouse.isButtonDown(0);
@@ -47,7 +45,7 @@ public class Player {
 			} else if (Keyboard.getEventKey() == Keyboard.KEY_LEFT && Keyboard.getEventKeyState()) {
 				Clock.ChangeMultiplier(-0.07f);
 			} else if (Keyboard.getEventKey() == Keyboard.KEY_T && Keyboard.getEventKeyState()) {
-				towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.GetTile(17,7), 1000, 100, waveManager.getCurrentWave().getEnemyList(), 2, 700));
+				towerList.add(new TowerCannon(QuickLoad("cannonBase"), grid.getTile(17,7), 1000, 100, waveManager.getCurrentWave().getEnemyList(), 2, 700));
 			}
 		}
 	}

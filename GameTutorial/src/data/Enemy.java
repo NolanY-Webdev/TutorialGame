@@ -34,9 +34,9 @@ public class Enemy implements Entity {
 		//0 = X direction
 		this.directions[1] = 0;
 		//1 = Y direction
-		directions = FindNextDir(startTile);
+		directions = findNextDir(startTile);
 		this.currentCheckpoint = 0;
-		PopulateCheckpointList();
+		populateCheckpointList();
 		
 		
 	}
@@ -45,20 +45,20 @@ public class Enemy implements Entity {
 		if (first) {
 			first = false;
 		} else {
-			if(CheckpointReached()) {
+			if(checkpointReached()) {
 				if(currentCheckpoint + 1 == checkpoints.size()) {
-					Die();
+					die();
 				} else {
 					currentCheckpoint++;
 				}
 			} else {
-				x += Delta() * checkpoints.get(currentCheckpoint).getxDirection() * speed;
-				y += Delta() * checkpoints.get(currentCheckpoint).getyDirection() * speed;
+				x += Delta() * checkpoints.get(currentCheckpoint).getXDirection() * speed;
+				y += Delta() * checkpoints.get(currentCheckpoint).getYDirection() * speed;
 			}
 		}
 	}
 
-	private boolean CheckpointReached() {
+	private boolean checkpointReached() {
 		boolean reached = false;
 		Tile t = checkpoints.get(currentCheckpoint).getTile();
 		//position check with variable tolerance of 3 (arbitrary)
@@ -74,26 +74,26 @@ public class Enemy implements Entity {
 		return reached;
 	}
 	
-	private void PopulateCheckpointList() {
+	private void populateCheckpointList() {
 		//or declare directions here and leave declarative "=" out V
-		checkpoints.add(FindNextCheck(startTile, directions = FindNextDir(startTile)));
+		checkpoints.add(findNextCheck(startTile, directions = findNextDir(startTile)));
 		
 		int counter = 0;
 		boolean cont = true;
 		while (cont) {
-			int[] currentDir = FindNextDir(checkpoints.get(counter).getTile());
+			int[] currentDir = findNextDir(checkpoints.get(counter).getTile());
 			//counter portion is cp inf loop failsafe
 			if(currentDir[0] == 2 || counter == 20) {
 				cont = false;
 			} else {
-				checkpoints.add(FindNextCheck(checkpoints.get(counter).getTile(),
-						directions = FindNextDir(checkpoints.get(counter).getTile())));
+				checkpoints.add(findNextCheck(checkpoints.get(counter).getTile(),
+						directions = findNextDir(checkpoints.get(counter).getTile())));
 			}
 			counter++;
 		}
 	}
 	
-	private Checkpoint FindNextCheck(Tile s, int[] dir) {
+	private Checkpoint findNextCheck(Tile s, int[] dir) {
 		Tile next = null;
 		Checkpoint c = null;
 		
@@ -107,14 +107,14 @@ public class Enemy implements Entity {
 			
 			if (s.getXPlace() + dir[0] * counter == grid.getTilesWide() ||
 					s.getYPlace() + dir[1] * counter == grid.getTilesHigh() || 
-					s.getType() != grid.GetTile(
+					s.getType() != grid.getTile(
 						s.getXPlace() + dir[0] * counter, 
 						s.getYPlace() + dir[1] * counter).getType()) 
 			{
 				found = true;
 				//move counter back to previous tile before change
 				counter -= 1;
-				next = grid.GetTile(
+				next = grid.getTile(
 						s.getXPlace() + dir[0] * counter, 
 						s.getYPlace() + dir[1] * counter);
 			}
@@ -127,12 +127,12 @@ public class Enemy implements Entity {
 		
 	}
 	
-	private int[] FindNextDir(Tile s) {
+	private int[] findNextDir(Tile s) {
 		int[] dir = new int[2];
-		Tile u = grid.GetTile(s.getXPlace(), s.getYPlace() - 1);
-		Tile d = grid.GetTile(s.getXPlace(), s.getYPlace() + 1);
-		Tile r = grid.GetTile(s.getXPlace() + 1, s.getYPlace());
-		Tile l = grid.GetTile(s.getXPlace() - 1, s.getYPlace());
+		Tile u = grid.getTile(s.getXPlace(), s.getYPlace() - 1);
+		Tile d = grid.getTile(s.getXPlace(), s.getYPlace() + 1);
+		Tile r = grid.getTile(s.getXPlace() + 1, s.getYPlace());
+		Tile l = grid.getTile(s.getXPlace() - 1, s.getYPlace());
 		
 		if(s.getType() == u.getType() && directions[1] != 1) {
 			dir[0] = 0;
@@ -158,12 +158,12 @@ public class Enemy implements Entity {
 	public void damage(int dmgDone) {
 		health -= dmgDone;
 		if(health <= 0) {
-			Die();
+			die();
 		}
 	}
 	
 	
-	private void Die() {
+	private void die() {
 		alive = false;
 	}
 

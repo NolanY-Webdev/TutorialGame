@@ -33,10 +33,7 @@ public class TowerCannon {
 		this.projectiles = new ArrayList<Projectile>();
 		this.enemies = enemies;
 		this.targetLocked = false;
-//		this.target = targetingSystems(); //vs accquireTarget in vid
-//		this.angle = calculateAngle();
 		
-
 	}
 	
 	private Enemy targetingSystems() {    //vs accquireTarget in vid
@@ -80,22 +77,32 @@ public class TowerCannon {
 
 	private void fire() {
 		tSLS = 0;
-		projectiles.add(new Projectile(QuickLoad("bullet"), (x + (Game.TILE_SIZE / 2) - (Game.TILE_SIZE / 4)), (y + (Game.TILE_SIZE / 2) - (Game.TILE_SIZE / 4)), 32, 32, projectileSpeed, damage, target));
+		projectiles.add(new Projectile(QuickLoad("bullet"), (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), 32, 32, projectileSpeed, damage, target));
 	}
 	
 	public void updateEnemyList(ArrayList<Enemy> newList) {
 		enemies = newList;
 	}
 	
+	//AKA: Tower AI
 	public void update() {
+		//LOCKED ON? NO? LOCK ON!
 		if(!targetLocked){
 			target = targetingSystems();
+			
 		}
 		
+		//STILL LOCKED? NO? BACK TO STEP 1
 		if(target == null || !target.isAlive() || !rangeCheck(target)) {
 			targetLocked = false;
 		}
 		
+		//THIS LINE FIXED THE TOWER RANGE TARGETING ERROR, SAYS IF YOU ARE LOCKED ON AND IN RANGE THEN AIM
+		if(targetLocked && rangeCheck(target)) {
+			angle = calculateAngle();
+		}
+		
+		//IF IT IS TIME TO FIRE THEN FIRE ASSUMING THINGS ARE STILL LOCKED ON
 		tSLS += Delta();
 		if(tSLS > fireRate && targetLocked == true){
 			fire();
@@ -104,7 +111,7 @@ public class TowerCannon {
 		for(Projectile p: projectiles) {
 			p.update();
 		}
-		angle = calculateAngle();
+
 		draw();
 	}
 

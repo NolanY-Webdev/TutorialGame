@@ -1,30 +1,26 @@
 package data;
 
-import static helpers.Artist.QuickLoad;
+import static helpers.Artist.*;
 
 public class Game {
 
 	private TileGrid grid;
 	private Player player;
 	private WaveManager waveManager;
-	public static final int TILE_SIZE = 64;
 	//TEMP VARS
 //	TowerCannon tower;
 	
 	public Game (int[][] map) {
 		grid = new TileGrid(map);
-		waveManager = new WaveManager(new Enemy(QuickLoad("enemy1"), grid.GetTile(10, 8), grid, 45, 64, 64, 60), 3, 5);
+		waveManager = new WaveManager(new Enemy(QuickLoad("enemy1"), grid.getTile(10, 8), grid, 45, TILE_SIZE, TILE_SIZE, 60), 3, 5);
 		player = new Player(grid, waveManager);
 		
 //		tower = new TowerCannon(QuickLoad("cannonBase"), grid.GetTile(8,8), 10, 2, 80);
-		
-		
 	}
 	
 	public void update() {
-		grid.Draw();
+		grid.draw();
 		waveManager.update();
 		player.update();
-//		tower.update();
 	}
 }

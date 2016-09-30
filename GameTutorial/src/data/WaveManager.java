@@ -16,7 +16,7 @@ public class WaveManager {
 		this.spawnTime = spawnTime;
 		this.timeSinceLastWave = 0;
 		this.waveNumber = 0;
-		this.waveBreakTimer = 10;
+		this.waveBreakTimer = 2;
 
 		this.currentWave = null;
 		
@@ -25,7 +25,7 @@ public class WaveManager {
 	
 	public void update() {
 		if(!currentWave.isCompleted()) {
-			currentWave.Update();
+			currentWave.update();
 		} else if (currentWave.isCompleted()) {
 			System.out.println("Wave " + waveNumber + " completed. Wave Break:" + timeSinceLastWave);
 			if(timeSinceLastWave >= waveBreakTimer) {

@@ -1,6 +1,6 @@
 package data;
 
-import static helpers.Artist.HEIGHT;
+import static helpers.Artist.*;
 import static helpers.Cartog.*;
 
 import org.lwjgl.input.Keyboard;
@@ -22,7 +22,7 @@ public class Editor {
 	}
 
 	public void update() {
-		grid.Draw();
+		grid.draw();
 		
 		// Mouse input
 		if (Mouse.isButtonDown(0)) {
@@ -46,7 +46,7 @@ public class Editor {
 	}
 
 	private void setTile() {
-		grid.SetTile((int) Math.floor(Mouse.getX() / 64), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / 64),
+		grid.setTile((int) Math.floor(Mouse.getX() / TILE_SIZE), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / TILE_SIZE),
 				types[index]);
 	}
 
