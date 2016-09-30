@@ -26,6 +26,6 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="helpers.Clock"/>
-<fullyQualifiedTypeName name="helpers.Artist"/>
 <fullyQualifiedTypeName name="org.newdawn.slick.opengl.Texture"/>
+<fullyQualifiedTypeName name="helpers.Artist"/>
 </qualifiedTypeNameHistroy>
