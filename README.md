@@ -201,9 +201,10 @@
 
 ## Day 13
 
-  @
+  @ https://youtu.be/IN-V4g6c7pU?t=7m26s    (or somewhere around there)
 
-    -
+    - Adding TowerType enum for simple creation of multiple tower types.
+    - Paused video and working ahead freestyle to prep enum for future expected uses.
 
   @
 
