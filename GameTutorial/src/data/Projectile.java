@@ -5,22 +5,24 @@ import static helpers.Clock.*;
 import static helpers.Artist.*;
 
 
-public class Projectile implements Entity {
+public abstract class Projectile implements Entity {
 
 	private Texture texture;
 	private float x, y, speed, xVelocity, yVelocity;
 	private int damage, width, height;
 	private Enemy target;
 	private boolean alive;
+	private ProjectileType type;
 	
-	public Projectile(Texture texture, float x, float y, int width, int height, float speed, int damage, Enemy target) {
-		this.texture = texture;
+	public Projectile(ProjectileType type, float x, float y, Enemy target) {
+		this.type = type;
+		this.texture = type.texture;
 		this.x = x;
 		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.speed = speed;
-		this.damage = damage;
+		this.width = type.width;
+		this.height = type.height;
+		this.speed = type.projectileSpeed;
+		this.damage = type.projectileDamage;
 		this.target = target;
 		this.xVelocity = 0f;
 		this.yVelocity = 0f;

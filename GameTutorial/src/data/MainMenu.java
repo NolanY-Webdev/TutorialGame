@@ -15,7 +15,7 @@ public class MainMenu {
 	private UI menuUI;
 	
 	public MainMenu() {
-		background = QuickLoad("mainMenuBG");
+		background = QuickLoad("newMainMenuBG");
 		menuUI = new UI();
 		menuUI.addButton("Play", "playButton", WIDTH /2 -128, (int) (HEIGHT * 0.45f));
 		menuUI.addButton("Editor", "editorButton", WIDTH /2 -128, (int) (HEIGHT * 0.55f));

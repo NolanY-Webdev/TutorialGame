@@ -14,6 +14,8 @@ public class Player {
 	private WaveManager waveManager;
 	private ArrayList<Tower> towerList;
 	private Boolean leftMouseButtonDown;
+	private Boolean rightMouseButtonDown;
+	
 	
 
 	public Player(TileGrid grid, WaveManager waveManager) {
@@ -28,16 +30,25 @@ public class Player {
 		for(Tower t : towerList) {
 			t.update();
 			t.draw();
-//			t.updateEnemyList(waveManager.getCurrentWave().getEnemyList());
+			t.updateEnemyList(waveManager.getCurrentWave().getEnemyList());
 		}
 		
 		//Mouse input
 		if (Mouse.isButtonDown(0) && !leftMouseButtonDown) {
 			
-			towerList.add(new TowerCannonBlue(TowerType.CannonBlue, grid.getTile( (int) Math.floor(Mouse.getX() / TILE_SIZE), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / TILE_SIZE))));
+			towerList.add(new IceCannon(TowerType.IceCannon, grid.getTile( (int) Math.floor(Mouse.getX() / TILE_SIZE), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / TILE_SIZE)), waveManager.getCurrentWave().getEnemyList()));
 		}
-		
 		leftMouseButtonDown = Mouse.isButtonDown(0);
+		
+
+		if (Mouse.isButtonDown(1) && !rightMouseButtonDown) {
+			
+			towerList.add(new TowerCannonBlue(TowerType.CannonRed, grid.getTile( (int) Math.floor(Mouse.getX() / TILE_SIZE), (int) Math.floor((HEIGHT - Mouse.getY() - 1) / TILE_SIZE)), waveManager.getCurrentWave().getEnemyList()));
+		}
+		rightMouseButtonDown = Mouse.isButtonDown(1);
+		
+		
+		
 		
 		//Keyboard input
 		while (Keyboard.next()) {

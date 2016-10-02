@@ -212,9 +212,19 @@
     - Reconnecting tower AI and such in next vid.
     - May take a day or so after this vid to wipe old test branch out and re-brach a complete variant of this codebase for testing. Seems like a good place in the videos to deviate.
 
-  @
 
-    -
+## Day 14
+  @ https://youtu.be/5ql-wIVXwZM?t=1m6s               (Or possibly done with it. I think... see  V log V )
+
+    - So I deviated and went a bit off the path of the video but mostly ahead.
+    - My code already has my guess as to how to instantiate projectiles as an abstract class.
+    - I am planning to eventually have an individual +tower dmg and a seperate +bullet damage.
+
+      - I can always set one of the types to 0 if I decide I don't like it.
+      - Would allow me to eventually implement a "research" type feature that upgrades ammo across a particular genre of towers.
+      - This appeals to me the most as it would give players more to upgrade and change.
+
+    - Video is going to be going over code I already attempted myself to the best of my knowledge( and by accident, lol).
 
   @
 

@@ -2,26 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="left" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="left"/>
+			<item value="updateEnemyList"/>
+			<item value=", TILE_SIZE, TILE_SIZE"/>
 			<item value="64"/>
 			<item value="Game."/>
 			<item value="package data;"/>
 		</list>
 		<list key="replacehistory">
-			<item value="TILE_SIZE"/>
+			<item value="right"/>
 			<item value=""/>
+			<item value="TILE_SIZE"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="290" key="DIALOG_WIDTH"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		<item value="409" key="DIALOG_HEIGHT"/>
-		<item value="894" key="DIALOG_X_ORIGIN"/>
-		<item value="74" key="DIALOG_Y_ORIGIN"/>
+		<item value="918" key="DIALOG_X_ORIGIN"/>
+		<item value="89" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

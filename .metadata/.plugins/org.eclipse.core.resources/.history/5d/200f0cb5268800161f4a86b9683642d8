@@ -1,0 +1,21 @@
+package data;
+
+import org.newdawn.slick.opengl.Texture;
+
+public enum ProjectileType {
+
+	Texture[] texture;
+	int damage, projectileRange, width, height;
+	float  projectileSpeed;
+	
+	
+	ProjectileType(Texture[] texture, int damage, int projectileRange, float projectileSpeed) {
+		this.texture = texture;
+		this.damage = damage;
+		this.projectileRange = projectileRange;
+		this.projectileSpeed = projectileSpeed;
+		
+	}
+	
+	
+}

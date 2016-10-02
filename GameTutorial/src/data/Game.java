@@ -12,7 +12,7 @@ public class Game {
 	
 	public Game (int[][] map) {
 		grid = new TileGrid(map);
-		waveManager = new WaveManager(new Enemy(QuickLoad("enemy1"), grid.getTile(10, 8), grid, 45, TILE_SIZE, TILE_SIZE, 60), 3, 5);
+		waveManager = new WaveManager(new Enemy(QuickLoad("almostOKNewEnemy"), grid.getTile(10, 8), grid, 45, TILE_SIZE, TILE_SIZE, 60), 3, 5);
 		player = new Player(grid, waveManager);
 		
 //		tower = new TowerCannon(QuickLoad("cannonBase"), grid.GetTile(8,8), 10, 2, 80);

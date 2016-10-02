@@ -1,0 +1,19 @@
+package data;
+
+import org.newdawn.slick.opengl.Texture;
+
+public class BasicBullet extends Projectile {
+	
+	private Texture texture;
+	private int damage;
+	private float speed;
+
+	public BasicBullet(float x, float y, int width, int height, float speed,
+			Enemy target) {
+		this.damage = 5;
+		
+		super(texture, x, y, width, height, speed, damage, target);
+
+	}
+
+}

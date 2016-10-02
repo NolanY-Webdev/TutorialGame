@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="data.Game"/>
 <fullyQualifiedTypeName name="data.MainMenu"/>
 <fullyQualifiedTypeName name="data.Editor"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="UI.UI"/>
 <fullyQualifiedTypeName name="java.awt.Button"/>
 <fullyQualifiedTypeName name="org.lwjgl.input.Mouse"/>
@@ -27,5 +26,6 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="helpers.Clock"/>
 <fullyQualifiedTypeName name="org.newdawn.slick.opengl.Texture"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="helpers.Artist"/>
 </qualifiedTypeNameHistroy>

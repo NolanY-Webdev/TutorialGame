@@ -77,7 +77,7 @@ public class TowerCannon {
 
 	private void fire() {
 		tSLS = 0;
-		projectiles.add(new Projectile(QuickLoad("bullet"), (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), 32, 32, projectileSpeed, damage, target));
+		projectiles.add(new BasicBullet(ProjectileType.BasicBullet, (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), target));
 	}
 	
 	public void updateEnemyList(ArrayList<Enemy> newList) {

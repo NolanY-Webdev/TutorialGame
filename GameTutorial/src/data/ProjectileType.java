@@ -1,0 +1,25 @@
+package data;
+
+import org.newdawn.slick.opengl.Texture;
+import static helpers.Artist.*;
+
+public enum ProjectileType {
+
+	BasicBullet(QuickLoad("bullet"), 10, 500, 100),
+	IceSpray(QuickLoad("frostProjectile"), 0, 100, 300);
+	
+	Texture texture;
+	int projectileDamage, projectileRange, width, height;
+	float  projectileSpeed;
+	
+	
+	ProjectileType(Texture texture, int projectileDamage, int projectileRange, float projectileSpeed) {
+		this.texture = texture;
+		this.projectileDamage = projectileDamage;
+		this.projectileRange = projectileRange;
+		this.projectileSpeed = projectileSpeed;
+		
+	}
+	
+	
+}
