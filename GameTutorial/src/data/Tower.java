@@ -83,7 +83,7 @@ public abstract class Tower implements Entity {
 
 	public void fire() {
 		tSLS = 0;
-		projectiles.add(new BasicBullet(projectileType, (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), target));
+		projectiles.add(new BasicBullet(projectileType, (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), target, enemies));
 	}
 	
 	public void updateEnemyList(ArrayList<Enemy> newList) {
@@ -115,6 +115,7 @@ public abstract class Tower implements Entity {
 		}
 		
 		for(Projectile p: projectiles) {
+			p.getUpdatedEnemyList(enemies);
 			p.update();
 		}
 
@@ -125,7 +126,7 @@ public abstract class Tower implements Entity {
 		if(textures.length > 1){
 			for(int i = 1; i < textures.length; i++) {
 				DrawQuadTextRotate(textures[i], x, y, width, height, angle);
-			}	
+			}
 		}
 	}
 	
@@ -170,5 +171,16 @@ public abstract class Tower implements Entity {
 		this.target = target;
 	}	
 	
+	public void resetTSLS() {
+		this.tSLS = 0;
+	}
+	
+	public ArrayList<Projectile> getProjectileList() {
+		return projectiles;
+	}
+	
+	public ArrayList<Enemy> getEnemyList() {
+		return enemies;
+	}
 	
 }

@@ -1,0 +1,11 @@
+package data;
+
+public class IceSpray extends Projectile{
+
+	public IceSpray(ProjectileType type, float x, float y, Enemy target) {
+		super(type, x, y, target);
+	}
+
+	
+	
+}

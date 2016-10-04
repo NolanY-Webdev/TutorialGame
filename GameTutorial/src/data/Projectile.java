@@ -2,19 +2,23 @@ package data;
 
 import org.newdawn.slick.opengl.Texture;
 import static helpers.Clock.*;
+
+import java.util.ArrayList;
+
 import static helpers.Artist.*;
 
 
 public abstract class Projectile implements Entity {
 
 	private Texture texture;
-	private float x, y, speed, xVelocity, yVelocity;
+	private float x, y, speed, xVelocity, yVelocity, maxRange;
 	private int damage, width, height;
 	private Enemy target;
 	private boolean alive;
 	private ProjectileType type;
+	private ArrayList<Enemy> enemies;
 	
-	public Projectile(ProjectileType type, float x, float y, Enemy target) {
+	public Projectile(ProjectileType type, float x, float y, Enemy target, ArrayList<Enemy> enemyList) {
 		this.type = type;
 		this.texture = type.texture;
 		this.x = x;
@@ -23,10 +27,12 @@ public abstract class Projectile implements Entity {
 		this.height = type.height;
 		this.speed = type.projectileSpeed;
 		this.damage = type.projectileDamage;
+		this.maxRange = type.projectileRange * 64;
 		this.target = target;
 		this.xVelocity = 0f;
 		this.yVelocity = 0f;
 		this.alive = true;
+		this.enemies = enemies;
 		calculateDirection();
 	}
 	
@@ -46,13 +52,23 @@ public abstract class Projectile implements Entity {
 		}
 	}
 	
+	public void collision (Enemy enemy) {
+		enemy.damage(this.damage);
+		alive = false;
+	}
+	
 	public void update () {
 		if(alive) {
 			x += xVelocity * speed * Delta();
 			y += yVelocity * speed * Delta();
-			if(CheckCollision(x, y, width, height, target.getX(), target.getY(), target.getWidth(), target.getHeight())){
-				target.damage(this.damage);
+			maxRange -= (Math.abs(xVelocity * speed * Delta()) + Math.abs(yVelocity * speed * Delta()));
+			if(maxRange < 0f) {
 				alive = false;
+			}
+			for(Enemy e : enemies) {
+				if(e.isAlive() && CheckCollision(x,y,width,height,e.getX(),e.getY(),e.getWidth(),e.getHeight())) {
+					collision(e);
+				}
 			}
 			draw();
 		}
@@ -95,4 +111,15 @@ public abstract class Projectile implements Entity {
 		this.height = height;
 	}
 	
+	public Enemy getTarget () {
+		return target;
+	}
+	
+	public void destroyProjectile() {
+		alive = false;
+	}
+	
+	public void getUpdatedEnemyList(ArrayList<Enemy> enemies) {
+		this.enemies = enemies;
+	}
 }

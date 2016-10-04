@@ -54,8 +54,10 @@ public class Player {
 		while (Keyboard.next()) {
 			if (Keyboard.getEventKey() == Keyboard.KEY_RIGHT && Keyboard.getEventKeyState()) {
 				Clock.ChangeMultiplier(0.07f);
+				System.out.println(Clock.getMultiplier());
 			} else if (Keyboard.getEventKey() == Keyboard.KEY_LEFT && Keyboard.getEventKeyState()) {
 				Clock.ChangeMultiplier(-0.07f);
+				System.out.println(Clock.getMultiplier());
 			} else if (Keyboard.getEventKey() == Keyboard.KEY_T && Keyboard.getEventKeyState()) {
 				System.out.println("Why would someone press T?");
 			}

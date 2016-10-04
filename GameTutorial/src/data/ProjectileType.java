@@ -6,7 +6,7 @@ import static helpers.Artist.*;
 public enum ProjectileType {
 
 	BasicBullet(QuickLoad("bullet"), 10, 500, 100),
-	IceSpray(QuickLoad("frostProjectile"), 0, 100, 300);
+	IceSpray(QuickLoad("frostProjectile"), 1, 3, 300);
 	
 	Texture texture;
 	int projectileDamage, projectileRange, width, height;

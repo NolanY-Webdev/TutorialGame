@@ -222,13 +222,22 @@
 
       - I can always set one of the types to 0 if I decide I don't like it.
       - Would allow me to eventually implement a "research" type feature that upgrades ammo across a particular genre of towers.
-      - This appeals to me the most as it would give players more to upgrade and change.
+      - This appeals to me the most as it would give players more to upgrade and change ingame.
 
     - Video is going to be going over code I already attempted myself to the best of my knowledge( and by accident, lol).
 
-  @
+## Day 15
+  @ https://youtu.be/5ql-wIVXwZM?t=6m17s    or somewhere in there.
 
-    -
+    - My code has now deviated quite a bit more heavily than the code in his video.
+    - Implemented projectile max ranges (as before the towers had a max aim distance but projectiles went on forever)
+    - Added unintended unit collision (on purpose) aka if a bullet hits a target it wasnt meant for it will still register contact on that enemy.
+    - Multiple bug fixes (mostly ones added by this new code) ex:
+      - projectile max distances being modified by game speed multiplier
+      - projectiles traveling twice as far in y direction vs x direction
+      - etc... (most/all bugs had to do with projectiles)
+    - Known issues : Enemies are permanently slowed vs temporary slow effect.
+    - Next goal: add tower accuracy variation.
 
   @
 

@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="org.lwjgl.input.Mouse"/>
 <fullyQualifiedTypeName name="helpers.StateManager.GameState"/>
 <fullyQualifiedTypeName name="helpers.StateManager"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="helpers.Cartog"/>
 <fullyQualifiedTypeName name="data.Tile"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
@@ -26,6 +25,7 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="helpers.Clock"/>
 <fullyQualifiedTypeName name="org.newdawn.slick.opengl.Texture"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="helpers.Artist"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
