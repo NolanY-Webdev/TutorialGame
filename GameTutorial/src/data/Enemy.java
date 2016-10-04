@@ -9,7 +9,7 @@ import org.newdawn.slick.opengl.*;
 
 public class Enemy implements Entity {
 	private int width, height, health, currentCheckpoint;
-	private float speed, x, y;
+	private float speed, x, y, initialSpeed, effectDuration, effectResistance;
 	private Texture texture;
 	private Tile startTile;
 	private boolean first = true, alive = true;
@@ -26,6 +26,7 @@ public class Enemy implements Entity {
 		this.width = width;
 		this.height = height;
 		this.speed = speed;
+		this.initialSpeed = speed;
 		this.grid = grid;
 		this.health = health;
 		this.checkpoints = new ArrayList<Checkpoint>();
@@ -37,6 +38,8 @@ public class Enemy implements Entity {
 		directions = findNextDir(startTile);
 		this.currentCheckpoint = 0;
 		populateCheckpointList();
+		this.effectDuration = 0;
+		this.effectResistance = 0;
 		
 		
 	}
@@ -47,7 +50,7 @@ public class Enemy implements Entity {
 		} else {
 			if(checkpointReached()) {
 				if(currentCheckpoint + 1 == checkpoints.size()) {
-					die();
+					enemyDied();
 				} else {
 					currentCheckpoint++;
 				}
@@ -55,6 +58,19 @@ public class Enemy implements Entity {
 				x += Delta() * checkpoints.get(currentCheckpoint).getXDirection() * speed;
 				y += Delta() * checkpoints.get(currentCheckpoint).getYDirection() * speed;
 			}
+		}
+		
+		if(effectDuration == 0) {
+			speed = initialSpeed;
+		}else if(effectDuration > 0) {
+			effectDuration -= Delta();
+//			System.out.println("Remaining duration on slow:" + effectDuration);
+		} else if (effectDuration < 0) {
+			if(effectResistance != 100) {
+				effectResistance += 10;
+			}
+			effectDuration = 0;
+//			System.out.println("Current Resistance :" + effectResistance);
 		}
 	}
 
@@ -158,12 +174,21 @@ public class Enemy implements Entity {
 	public void damage(int dmgDone) {
 		health -= dmgDone;
 		if(health <= 0) {
-			die();
+			enemyDied();
 		}
 	}
 	
+	public void slowEffect(int percent, float duration) {
+		float slowedSpeed = (speed * (((float)100 - (float)percent)/(float)100));
+		if(effectDuration == 0) {
+			effectDuration = duration;
+//			System.out.println("slow effect instantiated, duration: " + duration + " percentage slowed:" + ((((float)100 - (float)percent)/(float)100)) + " Resist: " + effectResistance + "%");
+			speed = (((initialSpeed - slowedSpeed)/100) * effectResistance) + slowedSpeed;
+//			System.out.println("Speed after resistance calculations: " + speed);
+		}
+	}
 	
-	private void die() {
+	private void enemyDied() {
 		alive = false;
 	}
 

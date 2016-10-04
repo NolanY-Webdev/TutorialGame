@@ -11,14 +11,15 @@ import static helpers.Artist.*;
 public abstract class Projectile implements Entity {
 
 	private Texture texture;
-	private float x, y, speed, xVelocity, yVelocity, maxRange;
+	private float x, y, speed, xVelocity, yVelocity, maxRange, towerAcc;
 	private int damage, width, height;
 	private Enemy target;
 	private boolean alive;
 	private ProjectileType type;
 	private ArrayList<Enemy> enemies;
+	private int projectileSpin;
 	
-	public Projectile(ProjectileType type, float x, float y, Enemy target, ArrayList<Enemy> enemyList) {
+	public Projectile(ProjectileType type, float x, float y, Enemy target, float towerAcc, ArrayList<Enemy> enemyList) {
 		this.type = type;
 		this.texture = type.texture;
 		this.x = x;
@@ -32,14 +33,16 @@ public abstract class Projectile implements Entity {
 		this.xVelocity = 0f;
 		this.yVelocity = 0f;
 		this.alive = true;
+		this.towerAcc = towerAcc;
 		this.enemies = enemies;
+		this.projectileSpin = (int) (Math.random() * 360);
 		calculateDirection();
 	}
 	
 	private void calculateDirection() {
 		float totalAllowedMovement = 1.0f;
-		float xDistanceFromTarget = Math.abs(target.getX() - x - (TILE_SIZE / 4) + (TILE_SIZE / 2));
-		float yDistanceFromTarget = Math.abs(target.getY() - y - (TILE_SIZE / 4) + (TILE_SIZE / 2));
+		float xDistanceFromTarget = Math.abs(target.getX() - x - (TILE_SIZE / 4) + (TILE_SIZE / 2) + ( ((float)Math.random() * (32*towerAcc)) - 16*towerAcc ));
+		float yDistanceFromTarget = Math.abs(target.getY() - y - (TILE_SIZE / 4) + (TILE_SIZE / 2) + ( ((float)Math.random() * (32*towerAcc)) - 16*towerAcc ));
 		float totalDistanceFromTarget = xDistanceFromTarget + yDistanceFromTarget;
 		float xPercentageOfMovement = xDistanceFromTarget/totalDistanceFromTarget;
 		xVelocity = xPercentageOfMovement;
@@ -59,6 +62,7 @@ public abstract class Projectile implements Entity {
 	
 	public void update () {
 		if(alive) {
+			projectileSpin++;
 			x += xVelocity * speed * Delta();
 			y += yVelocity * speed * Delta();
 			maxRange -= (Math.abs(xVelocity * speed * Delta()) + Math.abs(yVelocity * speed * Delta()));
@@ -76,7 +80,7 @@ public abstract class Projectile implements Entity {
 	}
 	
 	public void draw() {
-		DrawQuadText(texture, x, y, 32, 32);
+		DrawQuadTextRotate(texture, x, y, 32, 32, projectileSpin);
 	}
 
 	public float getX() {

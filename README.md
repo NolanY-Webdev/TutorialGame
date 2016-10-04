@@ -239,9 +239,21 @@
     - Known issues : Enemies are permanently slowed vs temporary slow effect.
     - Next goal: add tower accuracy variation.
 
-  @
 
-    -
+## Day 16
+  @ No video progress, branching off entirely on my own now.
+
+    - Added temporary effect on slow.
+    - Added progressive enemy resistances to slow.
+    - Added second frost projectile skin and created method for two skins to alternate firing
+    - Fixed various bugs associated with additions
+
+      - Slows causing enemies to slow considerably more than intended due to things being intergers instead of floats.
+      - enemies not correctly calculating resistances to slows.
+
+    - Eventually a tower that resets nearby enemies resistances would be neat.
+    - Also added spin effect to all projectiles, currently only showing on frost projectiles as the other bullet skins are perfect circles.
+    - Might go back to videos after lunch.
 
   @
 

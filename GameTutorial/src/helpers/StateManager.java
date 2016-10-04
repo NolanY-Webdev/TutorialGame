@@ -3,6 +3,7 @@ package helpers;
 import data.Editor;
 import data.Game;
 import data.MainMenu;
+import static helpers.Cartog.*;
 
 public class StateManager {
 
@@ -46,7 +47,7 @@ public class StateManager {
 			break;
 		case GAME: 
 			if(game == null) {
-				game = new Game(map);
+				game = new Game(loadMap("mapTest"));
 			}
 			game.update();
 			break;

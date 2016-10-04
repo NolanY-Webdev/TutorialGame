@@ -83,7 +83,7 @@ public abstract class Tower implements Entity {
 
 	public void fire() {
 		tSLS = 0;
-		projectiles.add(new BasicBullet(projectileType, (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), target, enemies));
+		projectiles.add(new BasicBullet(projectileType, (x + (TILE_SIZE / 2) - (TILE_SIZE / 4)), (y + (TILE_SIZE / 2) - (TILE_SIZE / 4)), target, type.towerAcc, enemies));
 	}
 	
 	public void updateEnemyList(ArrayList<Enemy> newList) {
